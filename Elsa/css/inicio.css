@@ -1,1 +1,81 @@
 /* Estilos de la página inicio - Responsable: Elsa */
+
+.inicio {
+    display: flex;
+    align-items: center;   
+    gap: 40px; 
+}
+.inicio h2 {
+    font-size: 2.5em;         /* mas grande */
+    margin-bottom: 10px;
+}
+.inicio p {
+    font-size: 1.3em;
+    color: #6a9a4f;
+}
+.inicio div{
+    flex: 1; /* el div crece y ocupa todo el espacio hasta llegar a la imagen de la senyora */
+    animation-name: subir;
+    animation-duration: 2s;
+    animation-timing-function: ease-out; /* al ppio va rapido y frena al final*/
+}
+.inicio img {
+    width: 50%;
+    border-radius: 10px;
+    animation-name: deslizar;
+    animation-duration: 2s;
+    animation-timing-function: ease-out; /* al ppio va rapido y frena al final*/
+}
+
+
+
+.boton-planes {
+    display: inline-block; /* indica como se comporta la caja del elemento */
+    /* flex: coloca a sus hijos en fila o columna
+       block: ocupa todo el ancho y empieza en linea nueva
+       inline: en linea como una palabra --> ignora width, height y margin/padding verticales
+       inline-block: en linea, pero acepta width, height, margin y padding
+       none: desaparece y no ocupa espacio
+    */
+    
+    background-color: #6a9a4f; 
+    color: #ffffff;            
+    border-radius: 25px;      
+    text-decoration: none;  
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.boton-planes:hover {
+    background-color: #2d6a4f;
+    color: #ffffff;
+    transform: scale(1.1);  /* al pasar el raton, el boton crece un 10% su tamanyo*/
+}
+
+
+
+
+/* ---------- Animaciones ---------- */
+@keyframes subir {
+    from {
+        opacity: 0;                     /* invisible */
+        transform: translateY(30px);    /* 30px mas abajo de su sitio */
+    }
+    to {        
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes deslizar {
+    from {
+        opacity: 0;
+        transform: translateX(50px);    /* 50px a la derecha de su sitio */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

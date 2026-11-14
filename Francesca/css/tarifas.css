@@ -1,0 +1,74 @@
+/*Hoja estilos tarifas. Responsable: Francesca*/
+
+
+/* ---------- Botones ---------- */
+.boton,
+button {
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  color: #2e5e46;
+  background-color: #bfe0c4;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 24px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.boton:hover,
+button:hover {
+  background-color: #a3c940;
+}
+
+/* ---------- Tablas ---------- */
+table {
+  border-collapse: collapse;
+  background-color: #ffffff;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #bfe0c4;
+  padding: 10px 14px;
+  text-align: left;
+}
+thead th {
+  background-color: #6aa87a;
+  color: #ffffff;
+}
+tbody td:nth-child(even) {
+  background-color: #e4f2e2;
+}
+caption {
+  font-weight: 700;
+  color: #2e5e46;
+  padding: 8px;
+}
+.marcador { 
+  text-align: center;
+  color: #6aa87a;
+}
+.centrado{
+  text-align: center;
+}
+th:first-child{
+  width: 65%;
+}
+th:nth-child(2), th:nth-child(3), th:nth-child(4){
+  width: 10%;
+}
+
+
+
+/* ----------               ---------- */
+.condiciones{
+  font-style: italic;
+  font-size: small;
+  padding-top: 6px;
+}
+.tarifas{
+  width: 80%;
+  margin: 20px auto;
+}
+

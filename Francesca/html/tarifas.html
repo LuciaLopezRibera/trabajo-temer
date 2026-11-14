@@ -3,33 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>miHuertapp</title>
-    <link rel="stylesheet" href="../css/tarifas.css">
+    <title>miHuertapp - Tarifas</title>
     <link rel="stylesheet" href="../../estilos.css">
+    <link rel="stylesheet" href="../css/tarifas.css">
 </head>
 <body>
-    <header>
-        miHuertapp
-    </header>
-    <div class="tarifas">
-        <table>
-            <thead>
-                <tr> <th>Servicio incluido</th> <th class="centrado">Básico</th> <th class="centrado">Plus</th> <th class="centrado">Premium</th> </tr>
-            </thead>
-            <tr> <td>Instalación de equipos</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> </tr>
-            <tr> <td>Acceso a la aplicación</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
-            <tr> <td>Mantenimiento del sistema y de la aplicación</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
-            <tr> <td>Almacenamiento y procesado de datos en la nube</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
-            <tr> <td>Soporte técnico</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
-            <tr> <td>Sustitución de equipos por rotura o avería *</td> <td class="marcador"> &cross; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
-            <tr> <td>Sustitución de equipos por fenómenos metereológicos adversos *</td> <td class="marcador"> &cross; </td> <td class="marcador"> &cross; </td> <td class="marcador"> &check; </td></tr>
-        </table>
-        <p class="condiciones"> * Los daños ocasionados por un uso indebido de los elementos del sistema o por vandalismo quedan excluidos de la cobertura de la suscripción.</p>
-        <button onclick="interfazTabla">Ver diferencias</button>
+    <nav>
+        <a href="../../principal.html">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="tarifas.html" class="activa">Tarifas</a>
+        <a href="#">Reseñas</a>
+    </nav>
+    <div class="contenido">
+        <header>
+            <img src="../../img/logo_icono.jpg" alt="">
+            <h1><img src="../../img/logo_texto.jpg" alt="miHuertapp"></h1>
+            <a href="#" class="boton-portal">miPortal</a> <!-- OJO EL # HABRA QUE CAMBIARLO CUANDO BELEN HAGA LA PÁGINA DE LOGIN -->
+        </header>
+        <main>
+            <section class="tarifas">
+                <div class="tarjeta" id="plan-basico" onclick="seleccionarPlan('basico')">
+                    <h3>Básico</h3>
+                    <ul id="detalles-basico" class="detalle">
+                        <li>Instalación de equipos</li>
+                        <li>Acceso a la aplicación</li>
+                        <li>Mantenimiento del sistema y de la aplicación</li>
+                        <li> Almacenamiento y procesado de datos en la nube</li>
+                        <li>Soporte técnico</li>
+                    </ul>
 
-
-        <script src="js/tarifas.js"></script>
-        
+                </div>
+                <div class="tarjeta" id="plan-plus" onclick="seleccionarPlan('plus')">
+                    <h3>Plus</h3> 
+                    <ul id="detalles-plus" class="detalle">
+                        <li>Instalación de equipos</li>
+                        <li>Acceso a la aplicación</li>
+                        <li>Mantenimiento del sistema y de la aplicación</li>
+                        <li> Almacenamiento y procesado de datos en la nube</li>
+                        <li>Soporte técnico</li>
+                        <li>Sustitución de equipos por rotura o avería</li>
+                    </ul>
+                </div>
+                <div class="tarjeta" id="plan-premium" onclick="seleccionarPlan('premium')"> 
+                    <h3>Premium</h3>
+                    <ul id="detalles-premium" class="detalle">
+                        <li>Instalación de equipos</li>
+                        <li>Acceso a la aplicación</li>
+                        <li>Mantenimiento del sistema y de la aplicación</li>
+                        <li> Almacenamiento y procesado de datos en la nube</li>
+                        <li>Soporte técnico</li>
+                        <li>Sustitución de equipos por rotura o avería</li>
+                        <li>Sustitución de equipos por fenómenos meteorológicos adversos</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <h3 id="comparar" onclick="desplegarTabla()">
+                    Comparación de planes de suscripción
+                    <span id="triangulo">&#9660;</span>
+                </h3>
+                <div id="contenedorTabla">
+                    <table>
+                        <thead>
+                            <tr> <th>Servicio incluido</th> <th class="centrado">Básico</th> <th class="centrado">Plus</th> <th class="centrado">Premium</th> </tr>
+                        </thead>
+                        <tr> <td>Instalación de equipos</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> </tr>
+                        <tr> <td>Acceso a la aplicación</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
+                        <tr> <td>Mantenimiento del sistema y de la aplicación</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
+                        <tr> <td>Almacenamiento y procesado de datos en la nube</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
+                        <tr> <td>Soporte técnico</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
+                        <tr> <td>Sustitución de equipos por rotura o avería *</td> <td class="marcador"> &cross; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
+                        <tr> <td>Sustitución de equipos por fenómenos metereológicos adversos *</td> <td class="marcador"> &cross; </td> <td class="marcador"> &cross; </td> <td class="marcador"> &check; </td></tr>
+                    </table>
+                    <p class="condiciones"> * Los daños ocasionados por un uso indebido de los elementos del sistema o por vandalismo quedan excluidos de la cobertura de la suscripción.</p>
+                    
+                </div>
+            </section>             
+        </main>
+        <footer> <!-- ver diaps 04_PW_HTML_Elems-Cuerpo en caracteres especiales-->
+        <p>&copy; 2026 miHuertapp. Todos los derechos reservados.</p> 
+        <p>Contacto: <a href="tel:+34000000000">+34 000 000 000</a></p>
+        <p>Correo: <a href="mailto:info@mihuertapp.com">info@mihuertapp.com</a></p>
+        <p>Atención al cliente: lunes a viernes, de 9:00 a 18:00</p>
+        </footer>
     </div>
+   
+    <script src="../js/tarifas.js"></script>
 </body>
 </html>

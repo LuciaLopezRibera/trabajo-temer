@@ -9,11 +9,14 @@ body {
   display: flex;
 }
 .contenido {
-  flex: 1;   /* para que el texto de la web no se solape con la barra de navegacion */
+  flex: 1;                  /* para que el texto de la web no se solape con la barra de navegacion */
+  display: flex;            /* sus hijos (header, main, footer) pasan a ser elementos flex */
+  flex-direction: column;   /* y los queremos colocados en columna, uno debajo de otro */
 }
 
 main {
   padding: 50px;   /* espacio entre el borde y su contenido */
+  flex: 1;
 }
 
 
@@ -39,7 +42,6 @@ h1, h2, h3, h4 {
 }
 
 
-
 /* ---------- Enlaces ---------- */
 a {
   color: #2e5e46;        /* verdes */
@@ -48,15 +50,6 @@ a {
 a:hover {
   color: #6aa87a;        /* color que se ve al pasar el raton */
 }
-
-
-
-/* ---------- Imagenes ---------- */
-img {
-  max-width: 100%;  /* para que no se salga de la caja */
-  height: auto;     /* mantiene la proporcion */
-}
-
 
 
 /* ---------- Menu lateral ---------- */
@@ -115,3 +108,25 @@ nav a.activa {
   background-color: #9cc488;       
   color: #ffffff;                  
 }
+
+
+
+/* ---------- Pie de página ---------- */
+footer {
+  padding: 20px;               
+  background-color: #eff7ea;   
+  border-top: 2px solid #c5dfb5; 
+  text-align: center;          
+}
+footer p {
+  margin: 0;                   /* quita el espacio que el navegador pone entre párrafos */
+}
+
+
+
+/* ---------- Imagenes ---------- */
+img {
+  max-width: 100%;  /* para que no se salga de la caja */
+  height: auto;     /* mantiene la proporcion */
+}
+

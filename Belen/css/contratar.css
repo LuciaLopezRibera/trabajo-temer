@@ -1,0 +1,131 @@
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', Verdana, sans-serif; /* tipografia */
+  display: flex;
+}
+.contenido {
+  flex: 1;                  /* para que el texto de la web no se solape con la barra de navegacion */
+  display: flex;            /* sus hijos (header, main, footer) pasan a ser elementos flex */
+  flex-direction: column;   /* y los queremos colocados en columna, uno debajo de otro */
+}
+
+main {
+  padding: 50px;   /* espacio entre el borde y su contenido */
+  flex: 1;
+}
+
+
+header {
+  display: flex;            /* icono y nombre en fila */
+  justify-content: center;  
+  align-items: center;      
+  gap: 15px;                /* espacio entre el icono y el nombre */
+  padding: 20px;            /* espacio alrededor de la cabecera */
+}
+header img {
+  height: 60px;             
+}
+header h1 {
+  margin: 0;                /* quita el margen que el navegador pone a los h1 por defecto */
+  position: relative;       /* para poder moverlo */
+  top: 18px;                 /* lo bajamos esos px */
+}
+
+
+h1, h2, h3, h4 {
+  color: #2e5e46;  /* titulos en verde */
+}
+
+
+/* ---------- Enlaces ---------- */
+a {
+  color: #2e5e46;        /* verdes */
+  transition: color 0.3s;  /* para que al pasar con el raton se vea más clarito */
+}
+a:hover {
+  color: #6aa87a;        /* color que se ve al pasar el raton */
+}
+
+
+/* ---------- Menu lateral ---------- */
+nav {
+  width: 180px;
+  background-color: #ffffff;
+  min-height: 100vh;                   /* para que el alto sea como mínimo todo el alto de la ventana */
+  border-right: 2px solid #c5dfb5;   /* línea a la derecha */
+  display: flex;            
+  flex-direction: column;              /* colocados en columna uno debajo de otro */
+}
+nav a {
+  flex: 1;                            /* partes iguales */
+  display: flex;                      /* cada enlace crece segun el alto */
+  align-items: center;
+  justify-content: center;                     
+  text-decoration: none;               /* quita el subrayado */
+  border-bottom: 2px solid #c5dfb5;  /* línea separadora entre opciones */
+}
+nav a:hover {
+  background-color: #eff7ea;         /* se oscurece un poquito al pasar el raton */
+}
+nav a.activa {
+  background-color: #d6ebc8;         
+}
+
+
+
+/* ---------- Boton miPortal: arriba a la derecha ---------- */
+.boton-portal {
+  position: absolute; /* indica como se ubica un elem en la pagina y respecto a que se mueve, tema 4 diap 5 */
+  /*  static: posicionamiento normal, valor por defecto
+      relative: se desplaza respecto a su posicion normal
+      absolute: se ubica respecto a su ancestro mas cercano no static
+      fixed: se queda congelado en la pantalla aunque hagas scroll
+      sticky: pasa de relative a fixed al hacer scroll
+
+      Se escoge absolute para sacar el boton de la fila flex del header (que es su ancestro con pos relative)
+      Asi el logo y el nombre siguen centrados 
+
+  */
+
+  /* distancia al header */
+  top: 20px;
+  right: 20px; 
+
+  padding: 8px 20px;                    
+  background-color: #d6ebc8;          
+  border: 2px solid #9cc488;          
+  border-radius: 20px;                  /* esquinas redondeadas */
+  text-decoration: none;                /* quita el subrayado */
+  transition: background-color 0.3s;
+}
+
+.boton-portal:hover {
+  background-color: #9cc488;       
+  color: #ffffff;                  
+}
+
+
+
+/* ---------- Pie de página ---------- */
+footer {
+  padding: 20px;               
+  background-color: #eff7ea;   
+  border-top: 2px solid #c5dfb5; 
+  text-align: center;          
+}
+footer p {
+  margin: 0;                   /* quita el espacio que el navegador pone entre párrafos */
+}
+
+
+
+/* ---------- Imagenes ---------- */
+img {
+  max-width: 100%;  /* para que no se salga de la caja */
+  height: auto;     /* mantiene la proporcion */
+}

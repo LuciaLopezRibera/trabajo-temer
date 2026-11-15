@@ -4,22 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>miHuertapp - Contratar</title>
+  <link rel="stylesheet" href="../../estilos.css">
   <link rel="stylesheet" href="../css/contratar.css">
 </head>
 <body>
-    <main>
-    <h1>Contratar miHuertapp</h1>
+    <!-- menu lateral -->
+    <nav>
+      <a href="../../principal.html" class="activa">Inicio</a>
+      <a href="#">Servicios</a>
+      <a href="../../Francesca/html/tarifas.html">Tarifas</a>
+      <a href="contratar.html">Contratar</a>
+    </nav>
+    <div class="contenido">
+      <!-- cabecera -->
+      <header>
+        <img src="../../img/logo_icono.jpg" alt="">
+        <h1><img src="../../img/logo_texto.jpg" alt="miHuertapp"></h1>
+        <a href="#" class="boton-portal">miPortal</a>
+      </header>
 
-    <div class="formulario">
-        <h2>Datos personales:</h2>
-      <form name="DatosPersonales">
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre" name="nombre"><br>
-        <label for="apellidos">Apellidos</label>
-        <input type="text" id="apellidos" name="apellidos">
-      </form>
+
+      <main>
+        <h1>Contratar miHuertapp</h1>
+        <form name="formulario">
+          <!-- Datos Personales-->
+          <fieldset>
+            <legend>Datos personales</legend>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre"><br>
+
+            <label for="apellidos">Apellidos</label>
+            <input type="text" id="apellidos" name="apellidos"><br>
+
+              <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono"><br>
+
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo">
+          </fieldset>
+        </form>
+      </main>
+
+
+      <footer> 
+        <p>&copy; 2026 miHuertapp. Todos los derechos reservados.</p>
+        <p>Contacto: <a href="tel:+34642342442">+34 642 342 442</a></p>
+        <p>Correo: <a href="mailto:info@mihuertapp.com">info@mihuertapp.com</a></p>
+        <p>Atención al cliente: lunes a viernes, de 9:00 a 19:00</p>
+      </footer>
     </div>
-    </main>
     <script src="../js/contratar.js"></script>
 </body>
 </html>

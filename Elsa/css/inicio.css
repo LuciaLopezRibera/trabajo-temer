@@ -1,5 +1,7 @@
 /* Estilos de la página inicio - Responsable: Elsa Blasco Novell */
 
+
+/* ---------- Inicio: ¿Que es miHuertapp? ---------- */
 .inicio {
     display: flex;
     align-items: center;   
@@ -28,7 +30,7 @@
 }
 
 
-
+/* ---------- Botones ---------- */
 .boton-planes {
     display: inline-block; /* indica como se comporta la caja del elemento */
     /* flex: coloca a sus hijos en fila o columna
@@ -116,4 +118,41 @@
 .infinito {
     transform: scale(2.5);   /* dibuja el simbolo al doble de tamaño */
     font-weight: normal;
+}
+
+
+
+/* ---------- Funcionamiento ---------- */
+.funcionamiento h2 {
+    margin-top: 50px;
+}
+
+.pasos {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.pasos div {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #c5dfb5;
+    border-radius: 20px;
+}
+.pasos img {
+    height: 120px;
+    object-fit: contain; /* como se ajusta una img o video dentro de su caja */
+    /*  fill: estira o deforma la img para llenar la caja, por defecto
+        contain: cabe entera sin deformarse, pero puede dejar huecos vacios
+        cover: llena toda la caja recortando lo que sobre, sin deformarla
+        none: mantiene su tamaño original ignorando la caja
+        scale-down: elige automaticamente entre none o contain, el que la deje mas pequenya
+    */
+}
+.pasos div:hover {
+    transform: translateY(-10px);
+}
+.flecha {
+    color: #6a9a4f;
+    font-size: 2em;
 }

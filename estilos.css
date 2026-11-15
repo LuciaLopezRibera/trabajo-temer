@@ -52,14 +52,36 @@ a:hover {
 }
 
 
-/* ---------- Menu lateral ---------- */
+/* ---------- Barra de navegacion lateral ---------- */
 nav {
   width: 180px;
+  height: 100vh;                       /* siempre el alto de la ventana*/
   background-color: #ffffff;
-  min-height: 100vh;                   /* para que el alto sea como mínimo todo el alto de la ventana */
   border-right: 2px solid #c5dfb5;   /* línea a la derecha */
   display: flex;            
   flex-direction: column;              /* colocados en columna uno debajo de otro */
+  
+  position: sticky; /* indica como se ubica el elemento y respecto a que se mueve, tema 4 diap 5 */
+    /*  static: posicionamiento normal, por defecto
+        relative: se desplaza respecto a su posicion normal
+        absolute: se ubica respecto a su ancestro mas cercano no static
+        fixed: se queda congelado en la pantalla aunque hagas scroll
+        sticky: pasa de relative a fixed al hacer scroll
+
+        sticky: la barra se queda pegada arriba al bajar por la pagina
+    */
+  
+  top: 0;  /* para que este pegada siempre al borde de arriba y no desaparezca */
+  
+  align-self: flex-start; /* alineacion de este elemento en el eje transversal de su padre flex */
+    /*  stretch: se estira para ocupar todo el alto del padre, por defecto
+        flex-start: pegado arriba, con su propio alto
+        flex-end: pegado abajo
+        center: centrado
+        baseline: alineado con la linea del texto
+
+        flex-start: si se estirara con la pagina, sticky no tendria hacia donde pegarse
+    */
 }
 nav a {
   flex: 1;                            /* partes iguales */

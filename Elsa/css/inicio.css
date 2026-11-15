@@ -218,3 +218,60 @@
 .oculto {
     display: none;
 }
+
+
+
+/* ---------- Perfiles de clientes ---------- */
+.perfiles {
+    margin-top: 80px;
+}
+.perfiles > p {            /* ponemos > para que solo afecte a los hijos que esten dentro de perfiles (no el texto de dentro de los perfiles)*/
+    font-style: italic;
+    font-size: 0.8em;
+    margin-bottom: 30px;
+}
+
+.tarjetas-perfiles {
+    display: flex;
+    gap: 20px;
+}
+.perfil {
+    flex: 1;
+    border: 2px solid #c5dfb5;
+    border-radius: 20px;
+    cursor: pointer;
+    overflow: hidden; /* para que las imagenes se redondeen tambien*/
+}
+.perfil:hover {
+    border-color: #6a9a4f;
+}
+.perfil img {
+    width: 100%; /* todo el ancho de su caja*/
+    height: 150px;
+    object-fit: cover;
+}
+#pro img {
+    object-position: 50% 30%;
+}
+#afi img {
+    object-position: 50% 10%;
+}
+
+.perfil h3, .perfil p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.perfil p {
+    display: none;
+}
+.destacado {
+    flex: 3; /* para que la tarjeta pequeña ocupe 3 veces mas que la otra */
+    background-color: #eff7ea;
+    cursor: default;
+}
+.destacado img {
+    height: 300px;
+}
+.destacado p {
+    display: block;
+}

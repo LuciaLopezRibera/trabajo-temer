@@ -21,9 +21,6 @@ if (clientes === null){
     contador.innerHTML = clientes;
 }
 
-
-
-
 // Paso 4: cada 3 segs (3000 ms) sumamos un cliente y lo mostramos --> setInterval(funcion, ms)
 function sumarCliente() {
     clientes++;
@@ -33,7 +30,38 @@ function sumarCliente() {
 
 setInterval(sumarCliente, 3000);
 
-
-
 // Tendremos que poner esto en la consola el dia del video para que empiece desde 2500 
 // localStorage.removeItem("clientes")
+
+
+
+
+
+// --------- SEMAFORO --------- //
+// Paso 1: buscamos las tres luces y los tres textos 
+const luzVerde = document.getElementById("luz-verde");
+const luzAmbar = document.getElementById("luz-ambar");
+const luzRoja  = document.getElementById("luz-roja");
+
+const textoVerde = document.getElementById("texto-verde");
+const textoAmbar = document.getElementById("texto-ambar");
+const textoRoja  = document.getElementById("texto-roja");
+
+// Paso 2: creamos la funcion que enienda el circulito de la luz recibida y muestre su texto
+function encender(luz, texto) {
+    // apagamos las tres luces
+    luzVerde.classList.remove("encendida");
+    luzAmbar.classList.remove("encendida");
+    luzRoja.classList.remove("encendida");
+
+    // ocultamos los tres textos
+    textoVerde.classList.add("oculto"); // le ponemos la clase oculto a textoVerde
+    textoAmbar.classList.add("oculto");
+    textoRoja.classList.add("oculto");
+
+    // encendemos solo la luz pulsada y mostramos solo su texto
+    luz.classList.add("encendida");
+    texto.classList.remove("oculto");
+}
+
+// Paso 3: 

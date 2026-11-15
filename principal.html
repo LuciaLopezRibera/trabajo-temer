@@ -20,7 +20,7 @@
   <!-- ===== LOGO ARRIBA DEL TODO ===== -->
   <div class="contenido">
     <header>
-      <img src="img/logo_icono.jpg", alt="">
+      <img src="img/logo_icono.jpg" alt="">
       <h1><img src="img/logo_texto.jpg" alt="miHuertapp"></h1>
       <a href="#" class="boton-portal">miPortal</a> <!-- OJO EL # HABRA QUE CAMBIARLO CUANDO BELEN HAGA LA PÁGINA DE LOGIN -->
     </header>
@@ -76,6 +76,7 @@
       <section class="funcionamiento">
         <h2>¿Cómo funciona miHuertapp?</h2>
 
+        <!-- ===== Pasos con tarjetitas ===== -->
         <div class="pasos">
           <div>
             <img src="img/estaca.jpg" alt="Estaca sensorial de miHuertapp">
@@ -102,18 +103,31 @@
             <img src="img/logo_icono.jpg" alt="Icono de la aplicación de miHuertapp">
             <h3>4. Avisa</h3>
           </div>
-
-
-
-
         </div>
 
+        <!-- ===== Semaforo ===== -->
+        <div class="semaforo">
+          <h3>Un simple vistazo basta</h3>
+          <p>Pulsa cada luz para ver qué significa</p>
 
+          <div class="luces">
+            <button id="luz-verde" class="luz verde encendida" onclick="encender(luzVerde, textoVerde)"></button>
+            <button id="luz-ambar" class="luz ambar" onclick="encender(luzAmbar, textoAmbar)"></button>
+            <button id="luz-roja" class="luz roja" onclick="encender(luzRoja, textoRoja)"></button>
+          </div>
 
+          <div id="texto-verde" class="texto-semaforo">
+            <h4>Todo en orden</h4>
+          </div>
+          <div id="texto-ambar" class="texto-semaforo oculto">
+            <h4>Requiere atención</h4>
+          </div>
+          <div id="texto-roja" class="texto-semaforo oculto">
+            <h4>Alerta crítica</h4>
+          </div>
+
+        </div>
       </section> 
-
-
-
 
 
     </main>

@@ -278,3 +278,32 @@
     color: #6a9a4f;
     text-align: center;
 }
+
+
+
+/* ---------- ODS ---------- */
+.ods {
+    margin-top: 80px;
+}
+.lista-ods {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 80px;
+    justify-content: center;
+}
+.lista-ods div {
+    width: 140px;
+}
+.lista-ods img:hover {
+    transform: scale(1.1);
+}
+.lista-ods p {
+    font-size: 0.9em;
+    text-align: center;
+    color: #4caf50;
+}
+.ods p {
+    font-style: italic;
+    font-size: 0.8em;
+    margin-bottom: 30px;
+}

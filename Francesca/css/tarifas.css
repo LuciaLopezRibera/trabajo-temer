@@ -108,6 +108,12 @@ th:nth-child(2), th:nth-child(3), th:nth-child(4){
 }
 #r1,#r2,#r3,#r4,#r5,#r6,#r7,#r8{
   display: none;
+  background-color: #d6ebc8; 
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 5px;
 }
 #p1:hover,#p2:hover,#p3:hover,#p4:hover,#p5:hover,#p6:hover,#p7:hover,#p8:hover{
   background-color: #6aa87a;

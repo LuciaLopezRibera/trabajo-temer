@@ -27,14 +27,17 @@ function desplegarTabla(){
         triangulo.innerHTML = "	&#x2227;";
     }
 }
-function desplegar(respuesta){
+function desplegar(numero){
+    const respuesta = "r" + numero;
+    const triangulo = "t" + numero;
     const r = document.getElementById(respuesta);
+    const t = document.getElementById(triangulo);
     if (r.style.display === "block"){
         r.style.display = "none";
-        
+        t.innerHTML = "&#x2228;";
     }else{
         r.style.display = "block";
-       
+        t.innerHTML = "	&#x2227;";
     }
 }
 

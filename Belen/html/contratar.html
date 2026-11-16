@@ -30,24 +30,29 @@
           <!-- Datos Personales-->
           <fieldset>
             <legend>Datos personales</legend>
+            <div class="datosPersonales">
+              <div class="izq">
+                <label for="nombre">Nombre</label><br>
+                <input type="text" id="nombre" name="nombre"><br>
 
-            <label for="nombre">Nombre</label><br>
-            <input type="text" id="nombre" name="nombre"><br>
+                <label for="telefono">Teléfono</label><br>
+                <input type="tel" id="telefono" name="telefono"><br>
 
-            <label for="apellidos">Apellidos</label><br>
-            <input type="text" id="apellidos" name="apellidos"><br>
+                <label for="direccion">Dirección</label><br>
+                <input type="text" id="direccion" name="direccion"><br>
+              </div>
 
-            <label for="telefono">Teléfono</label><br>
-            <input type="tel" id="telefono" name="telefono"><br>
+              <div class="der">
+                <label for="apellidos">Apellidos</label><br>
+                <input type="text" id="apellidos" name="apellidos"><br>
 
-            <label for="correo">Correo electrónico</label><br>
-            <input type="email" id="correo" name="correo"><br>
+                <label for="correo">Correo electrónico</label><br>
+                <input type="email" id="correo" name="correo"><br>
 
-            <label for="direccion">Dirección</label><br>
-            <input type="text" id="direccion" name="direccion"><br>
-
-            <label for="codpost">Código postal</label><br>
-            <input type="number" id="codpost" name="codigo postal">
+                <label for="codpost">Código postal</label><br>
+                <input type="text" id="codpost" name="codigo postal">
+              </div>     
+            </div>       
           </fieldset>
 
           <!-- Tipo de contratación-->
@@ -55,7 +60,7 @@
             <legend>Tipo de contratación</legend>
 
             <label for="sensores">Número de sensores a instalar:</label>
-            <input type="range" id="sensores" name="sensores" min="1" max="50"><br>
+            <input type="range" id="sensores" name="sensores" min="1" max="50" value="1"><br>
 
             <p>Plan de suscipción</p>
             <input type="radio" id="basico" name="suscripcion" value="basico">

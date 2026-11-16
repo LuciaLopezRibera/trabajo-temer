@@ -2,10 +2,63 @@ fieldset {
   border-width: 2px;
   border-style: solid;
   border-color:  #9dcb82;
+  border-radius: 20px;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 30px;
+}
+
+.datosPersonales{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 legend{
   color: #9dcb82;
   font-weight: bold;
-  font-size: 1.4em;
+  font-size: 1.5em;
+}
+
+.izq{
+  width: calc(100% / 2 - 15px);
+}
+
+.der{
+  width: calc(100% / 2 - 15px);
+}
+
+input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea{
+  border-width: 2px;
+  border-style: solid;
+  border-color:  #9dcb82;
+  border-radius: 5px;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: calc(100% - 30px);
+}
+
+input[type="text"]:hover, input[type="tel"]:hover, input[type="email"]:hover, input[type="password"]:hover, textarea:hover{
+  background-color:  #edf9e6;
+}
+
+input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, input[type="password"]:focus, textarea:focus{
+  background-color:  #edf9e6;
+}
+
+input[type="radio"]{
+  accent-color: #9dcb82;
+}
+
+input[type="radio"]:hover{
+  accent-color: #edf9e6;
+}
+
+input[type="range"]{
+  accent-color: #9dcb82;
+  width: auto;
 }

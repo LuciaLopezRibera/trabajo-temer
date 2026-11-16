@@ -1,0 +1,159 @@
+
+body{
+    transition: background-color 1s; /*Para que un cambio del color del fondo se anime tardando 1 seg*/
+}
+
+body.estado-verde {background-color: #d0f7ad;}
+body.estado-amarillo {background-color: #fcdb60;}
+body.estado-rojo {background-color: #fcb7ae;}
+
+body.estado-verde .muestra {background-color: #6aa87a;}
+body.estado-amarillo .muestra {background-color: #f0a030;}
+body.estado-rojo .muestra {background-color: #d9534f;}
+
+body.estado-verde .sensor {border-color: #6aa87a;}
+body.estado-amarillo .sensor {border-color: #f0a030;}
+body.estado-rojo .sensor {border-color: #d9534f;}
+
+body.estado-verde .barra div {background-color: #6aa87a;}
+body.estado-amarillo .barra div {background-color: #f0a030;}
+body.estado-rojo .barra div {background-color: #d9534f;}
+
+body.estado-verde .avisos li {border-left-color: #6aa87a;}
+body.estado-amarillo .avisos li {border-left-color: #f0a030;}
+body.estado-rojo .avisos li {border-left-color: #d9534f;}
+
+body.estado-verde footer {background-color: #6aa87a;}
+body.estado-amarillo footer {background-color: #f0a030;}
+body.estado-rojo footer {background-color: #d9534f;}
+
+/* Apartado donde se muestra el estado general del huerto*/
+.muestra{
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Separación de 30 px entre los hijos del contenedor */
+    color: white;
+    border-radius: 20px; /* Para redondear las esquinas del borde exterior */
+    padding: 30px;
+    margin-bottom: 40px;
+    transition: background-color 1s;
+}
+
+.muestra h2{
+    color: white; /* Para sobreescribir el color verde de los títulos normales y que ahora salgan en blanco */
+    font-size: 2em; /* Doble del tamaño del elemento padre */
+    margin-bottom: 10px;
+}
+
+.muestra p{
+    margin-bottom: 6px;
+    font-size: 1.2em;
+}
+
+.muestra .comprobacion{
+    font-size: 0.9em;
+    color: white;
+}
+
+/* Muestra de semáforo: rojo, amarillo o verde */
+.luz-estado{
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0; /* nos dice cuánto puede encogerse el elemento dentro del contenedor si falta espacio, pero no queremos que se encoja, osea que ponemos 0 */
+    border-radius: 50%;
+    background-color: white;
+    border: 6px solid rgba(255, 255, 255, 0.6);
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold; /* negrita */
+    line-height: 78px; /* viene de hacer 90 -2*6 (de los bordes), para que el símbolo se quede centrado a lo largo */
+}
+
+body.estado-verde .luz-estado {color: #6aa87a;}
+body.estado-amarillo .luz-estado {color: #f0a030;}
+body.estado-rojo .luz-estado {color: #d9534f;}
+
+.comprobacion{
+    font-size: 0.9em;
+    color: #5b6b5b;
+}
+
+/* Zona del panel de sensores */
+.sensores{
+    display: flex;
+    flex-wrap: wrap; /* Para permitir que los elementos salten a una nueva línea si no caben*/
+    gap: 20px;
+    margin-top: 16px;
+}
+
+.sensor{
+    /* Tres tarjetas por fila si hay sitio */
+    flex-grow: 1; /* Puede crecer. Si sobra espacio en la fila se expande para que no queden heucos vacíos */
+    flex-shrink: 1; /* Puede encogerse. Si falta espacia el elemento se encoge para caber */
+    flex-basis: 30%; /* Tamaño inicial (respecto al contenedor) */
+    min-width: 200px;
+    background-color: white;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: transform 0.3s; /* Las transformaciones de forma duran 0.3segs */
+}
+
+.sensor:hover{ /* Cuando se pasa el ratón por encima del sensor se hace un poco más grande */
+    transform:scale(1.04);
+}
+
+.sensor h3 {
+    margin-bottom: 8px;
+    font-size: 1.05em;
+}
+
+.sensor .valor{
+    font-size: 2.2em;
+    font-weight: bold; 
+    margin-bottom: 10px;
+    color: #2b3a30;
+}
+
+.sensor .unidad {
+    font-size: 0.45em;
+    color: #5b6b5b;
+}
+
+/* Barra de progreso. Con el js se va cambiando la forma de dentro */ 
+.barra{ /* Exterior de la barra */
+    background-color: #e8e8e8;
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden; /* Lo sobrante se corta para que no desborde */
+}
+
+.barra div{ /* Interior de la barra (lo que se cambia con el js) */
+    height: 100%;
+    width: 0; /* Empieza vacía */
+    border-radius: 10px;
+    transition: width 1s, background-color 1s;
+}
+
+/* Avisos */
+.avisos{ /* Quitar los estilos por defecto para las listas */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.avisos li{
+    background-color: white;
+    border-left-width: 8px;
+    border-left-style: solid;
+    border-radius: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    margin-bottom: 10px;
+}

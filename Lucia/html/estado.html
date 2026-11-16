@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miHuertapp - Estado del huerto</title>
+    <link rel="stylesheet" href="../../estilos.css">
+    <link rel="stylesheet" href="../css/estado.css">
+    <link rel="icon" href="img/logo_icono.jpg" type="image/jpeg">
+</head>
+<body>
+    <nav> <!-- Zona de navegación para el cliente (lateral) -->
+        <a href="estado.html" class="activa">Estado</a>  <!-- class activa para marcar que es en la que está el usuario -->
+        <a href="camaras.html">Cámaras</a> <!-- Enlace a la sección de videovigilancia -->
+        <a href="../../Belen/html/miPortal.html">Cerrar sesión</a> <!-- Enlace para volver a la zona de inicio de sesión -->
+    </nav>
+
+    <div class="contenido"> 
+        <header> <!-- Cabecera común de la página -->
+            <img src="../../img/logo_icono.jpg" alt="">
+            <h1><img src="../../img/logo_texto.jpg" alt="miHuertapp"></h1>
+        </header>
+
+        <main>  
+            <section class="muestra"> <!-- Estado del huerto -->
+                <div id="luz" class="luz-estado"></div> <!-- Semáforo que irá cambiando con el js -->
+                <div> <!-- Elementos que se dejan vacíos para rellenarlos con el js -->
+                    <h2 id = "titulo-estado"></h2>
+                    <p id = "mensaje-estado"></p>
+                    <p class="comprobacion">Comprobado al entrar a las <span id="hora-entrada"></span></p>
+                </div>
+            </section>
+
+            <section> <!-- Sensores -->
+                <h2>Panel de sensores</h2>
+                <p class="comprobacion">Última actualización: <span id="hora-actualizacion"></span></p>
+                <div id="sensores" class="sensores"></div> <!-- Se deja vacío también porque se rellena con el js -->
+            </section>
+
+            <section> <!-- Avisos -->
+                <h2>Avisos</h2>
+                <ul id="avisos" class="avisos"></ul> <!-- ul es lista desordenada -->
+            </section>
+        </main>
+
+        <footer> <!-- Pie de página -->
+            <p>&copy; 2026 miHuertapp. Todos los derechos reservados.</p>
+            <p>Contacto: <a href = "tel: +34642342442">+34 642 342 442</a></p>
+            <p>Correo: <a href="mailto:info@mihuertapp.com">info@mihuertapp.com</a></p>
+            <p>Atención al cliente: lunea a viernes, de 9:00 a 19:00</p>
+        </footer>
+
+    </div>
+
+    <script src="../js/estado.js"></script>
+    
+</body>
+</html>

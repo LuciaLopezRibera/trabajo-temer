@@ -12,18 +12,22 @@
         <a href="../../principal.html">Inicio</a>
         <a href="#">Servicios</a>
         <a href="tarifas.html" class="activa">Tarifas</a>
-        <a href="#">Reseñas</a>
+        <a href="../../Belen/html/contratar.html">Contratar</a>
     </nav>
     <div class="contenido">
         <header>
             <img src="../../img/logo_icono.jpg" alt="">
             <h1><img src="../../img/logo_texto.jpg" alt="miHuertapp"></h1>
-            <a href="#" class="boton-portal">miPortal</a> <!-- OJO EL # HABRA QUE CAMBIARLO CUANDO BELEN HAGA LA PÁGINA DE LOGIN -->
+            <a href="../../Belen/html/miPortal.html" class="boton-portal">miPortal</a>
         </header>
         <main>
+            <section class="texto">
+                Para adaptarse a las necesidades de los usuarios, miHuertapp ofrece tres planes de suscripción entre los que escoger según el nivel de cobertura necesario.
+            </section>
             <section class="tarifas">
+                
                 <div class="tarjeta" id="plan-basico" onclick="seleccionarPlan('basico')">
-                    <h3>Básico</h3>
+                    <h2>Básico</h2>
                     <ul id="detalles-basico" class="detalle">
                         <li>Instalación de equipos</li>
                         <li>Acceso a la aplicación</li>
@@ -34,7 +38,7 @@
 
                 </div>
                 <div class="tarjeta" id="plan-plus" onclick="seleccionarPlan('plus')">
-                    <h3>Plus</h3> 
+                    <h2>Plus</h2> 
                     <ul id="detalles-plus" class="detalle">
                         <li>Instalación de equipos</li>
                         <li>Acceso a la aplicación</li>
@@ -45,7 +49,7 @@
                     </ul>
                 </div>
                 <div class="tarjeta" id="plan-premium" onclick="seleccionarPlan('premium')"> 
-                    <h3>Premium</h3>
+                    <h2>Premium</h2>
                     <ul id="detalles-premium" class="detalle">
                         <li>Instalación de equipos</li>
                         <li>Acceso a la aplicación</li>
@@ -58,10 +62,10 @@
                 </div>
             </section>
             <section>
-                <h3 id="comparar" onclick="desplegarTabla()">
+                <h2 id="comparar" onclick="desplegarTabla()">
                     Comparación de planes de suscripción
-                    <span id="triangulo">&#9660;</span>
-                </h3>
+                    <span id="triangulo">&#x2228;</span>
+                </h2>
                 <div id="contenedorTabla">
                     <table>
                         <thead>
@@ -78,7 +82,68 @@
                     <p class="condiciones"> * Los daños ocasionados por un uso indebido de los elementos del sistema o por vandalismo quedan excluidos de la cobertura de la suscripción.</p>
                     
                 </div>
-            </section>             
+            </section> 
+            <section>
+                <h2>
+                    Preguntas frecuentes
+                </h2>
+                <h4 id="p1" onclick="desplegar('r1')">
+                    ¿Puedo cambiar de plan?
+                    <span>&#x2228;</span>
+                </h4>
+                <div id="r1">
+                    Sí, miHuertapp ofrece la opción de cambiar de plan desde la aplicación en cualquier momento. 
+                </div>
+                <h4 id="p2" onclick="desplegar('r2')">
+                    ¿Dónde puedo ver el plan que tengo contratado?
+                    <span>&#x2228;</span>
+                </h4>
+                <div id="r2">
+                    Puedes ver tu plan actual unto con su precio en el apartado de Mi Cuenta de la aplicación. 
+                </div>
+                <h4 id="p3" onclick="desplegar('r3')">
+                    ¿Cómo puedo ponerme en contacto con el equipo de ventas?
+                    <span>&#x2228;</span>
+                </h4>
+                <div id="r3">
+                    Para consultas sobre cómo escoger el plan que más se adapte a tus necesidades, ponte en contacto con nuestro equipo de ventas a través del correo <a href="mailto:info@mihuertapp.com">ventas@mihuertapp.com</a>. 
+                </div>
+                <h4 id="p4" onclick="desplegar('r4')">
+                    ¿Puedo darme de baja en cualquier momento?
+                    <span>&#x2228;</span>
+                </h4>
+                <div id="r4">
+                    Sí, puedes cancelar tu suscripción cuando quieras desde la aplicación, sin permanencia ni penalizaciones. Dispondrás de acceso al servicio hasta el final del periodo que hayas pagado. 
+                </div>
+                <h4 id="p5" onclick="desplegar('r5')">
+                    ¿Se reembolsa el dinero?
+                    <span>&#x2228;</span>
+                </h4>
+                <div id="r5">
+                    En los planes mensuales no se reembolsa el mes en curso, pero no se te cobrará el siguiente. En los planes anuales, si cancelas durante los primeros 30 días te devolvemos el importe completo, pasado este plazo te reembolsamos la parte proporcional de los meses que no hayas utilizado. 
+                </div>
+                <h4 id="p6" onclick="desplegar('r6')">
+                    ¿Qué ocurre si los equipos no funcionan?
+                    <span>&#x2228;</span>
+                </h4>
+                <div id="r6">
+                    Todos los planes incluyen soporte técnico para diagnosticar el problema. Si el fallo se debe a rotura o avería, excluyendo los daños por uso indebido o vandalismo, los planes Plus y Premium incluyen la sustitución del equipo sin coste. En el caso del plan Básico, nuestro equipo te ofrece orientación y un presupuesto para la reparación o la sustitución de los equipos.  
+                </div>
+                <h4 id="p7" onclick="desplegar('r7')">
+                    ¿Qué pasa si mi parcela es muy pequeña?
+                    <span>&#x2228;</span>
+                </h4>
+                <div id="r7">
+                    No hay problema. Una parcela de pequeñas dimensiones requiere un menor número de puntos de medición, por lo que se instalarán únicamente los equipos que necesitas. El precio del plan no cambia, el precio de la instalación varía en función del número de equipos instalados.  
+                </div>
+                <h4 id="p8" onclick="desplegar('r8')">
+                    ¿Qué pasa si mi parcela es muy grande?
+                    <span>&#x2228;</span>
+                </h4>
+                <div id="r8">
+                    Las parcelas de mayor tamaño requieren más puntos de medición. El número de equipos contratados e instalados aumentará, por lo que el precio aumenta. Sin embargo, el precio del plan contratado no varía. 
+                </div>
+            </section>            
         </main>
         <footer> <!-- ver diaps 04_PW_HTML_Elems-Cuerpo en caracteres especiales-->
         <p>&copy; 2026 miHuertapp. Todos los derechos reservados.</p> 

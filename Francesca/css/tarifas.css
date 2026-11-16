@@ -38,7 +38,16 @@ thead th {
   background-color: #6aa87a;
   color: #ffffff;
 }
-tbody td:nth-child(even) {
+#tablacomparar tbody td:nth-child(even) {
+  background-color: #e4f2e2;
+}
+#tablaoferta tbody td:nth-child(3) {
+  background-color: #e4f2e2;
+}
+#tablaoferta tbody td:last-child {
+  background-color: #d6ebc8;
+}
+#tablaprecios tbody tr:nth-child(even) {
   background-color: #e4f2e2;
 }
 caption {
@@ -63,6 +72,7 @@ th:nth-child(2), th:nth-child(3), th:nth-child(4){
 
 
 /* -------------------- */
+
 .condiciones{
   font-style: italic;
   font-size: small;
@@ -75,6 +85,7 @@ th:nth-child(2), th:nth-child(3), th:nth-child(4){
     cursor: pointer; /*para que al pasar por encima cambie a una mano y sepa que lo puedo pulsar*/
 }
 .texto{
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 .tarifas {

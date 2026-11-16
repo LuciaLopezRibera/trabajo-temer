@@ -64,4 +64,20 @@ function encender(luz, texto) {
     texto.classList.remove("oculto");
 }
 
-// Paso 3: 
+
+
+// --------- SELECCION DE PERFIL DE CLIENTES --------- //
+
+const perfiles = document.getElementById("perfiles");
+const perfilPro = document.getElementById("pro");
+const perfilAfi = document.getElementById("afi");
+
+function destacar(perfil) {
+    perfilPro.classList.remove("destacado");
+    perfilAfi.classList.remove("destacado");
+
+    perfil.classList.add("destacado");
+
+    // padre.insertBefore(elemQueMovemos, elemQueHayPrimero); --> ver Ej5 del tema 16:JS-DOM
+    perfiles.insertBefore(perfil, perfiles.firstChild);
+}

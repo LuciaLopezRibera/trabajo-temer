@@ -23,6 +23,8 @@
 }
 .inicio img {
     width: 50%;
+    height: 350px;
+    object-fit: cover;
     border-radius: 10px;
     animation-name: deslizar;
     animation-duration: 2s;
@@ -234,6 +236,7 @@
 .tarjetas-perfiles {
     display: flex;
     gap: 20px;
+    align-items: flex-start; /* para que las tarjetas no se estiren*/
 }
 .perfil {
     flex: 1;
@@ -241,6 +244,7 @@
     border-radius: 20px;
     cursor: pointer;
     overflow: hidden; /* para que las imagenes se redondeen tambien*/
+    transition: flex 0.5s;
 }
 .perfil:hover {
     border-color: #6a9a4f;
@@ -250,13 +254,6 @@
     height: 150px;
     object-fit: cover;
 }
-#pro img {
-    object-position: 50% 30%;
-}
-#afi img {
-    object-position: 50% 10%;
-}
-
 .perfil h3, .perfil p {
     padding-left: 20px;
     padding-right: 20px;
@@ -265,13 +262,19 @@
     display: none;
 }
 .destacado {
-    flex: 3; /* para que la tarjeta pequeña ocupe 3 veces mas que la otra */
+    flex: 2; /* para que ocupe 2 veces mas que la otra */
     background-color: #eff7ea;
     cursor: default;
 }
 .destacado img {
-    height: 300px;
+    height: auto;
 }
 .destacado p {
     display: block;
+}
+
+.cita {
+    font-style: italic;
+    color: #6a9a4f;
+    text-align: center;
 }

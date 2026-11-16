@@ -1,13 +1,14 @@
 fieldset {
   border-width: 2px;
   border-style: solid;
-  border-color:  #9dcb82;
+  border-color:  #2e5e46;
   border-radius: 20px;
   padding-top: 15px;
   padding-bottom: 20px;
   padding-left: 30px;
   padding-right: 30px;
   margin-bottom: 30px;
+  background-color: #f9fdf8;
 }
 
 .datosPersonales{
@@ -18,7 +19,7 @@ fieldset {
 }
 
 legend{
-  color: #9dcb82;
+  color: #2e5e46;
   font-weight: bold;
   font-size: 1.5em;
 }
@@ -54,11 +55,22 @@ input[type="radio"]{
   accent-color: #9dcb82;
 }
 
-input[type="radio"]:hover{
-  accent-color: #edf9e6;
-}
-
 input[type="range"]{
   accent-color: #9dcb82;
   width: auto;
+}
+
+.boton-contratar{                    
+  background-color: #edf9e6;          
+  border: 2px solid #2e5e46;          
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #2e5e46;
+  padding: 10px;
+}
+
+.boton-contratar:hover{                    
+  background-color: #2e5e46;          
+  color: white;
 }

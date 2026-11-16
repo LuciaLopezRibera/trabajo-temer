@@ -10,10 +10,10 @@
 <body>
     <!-- menu lateral -->
     <nav>
-      <a href="../../principal.html" class="activa">Inicio</a>
-      <a href="#">Servicios</a>
+      <a href="../../principal.html">Inicio</a>
+      <a href="../../Francesca/html/servicios.html">Servicios</a>
       <a href="../../Francesca/html/tarifas.html">Tarifas</a>
-      <a href="contratar.html">Contratar</a>
+      <a href="contratar.html" class="activa">Contratar</a>
     </nav>
     <div class="contenido">
       <!-- cabecera -->
@@ -30,18 +30,65 @@
           <!-- Datos Personales-->
           <fieldset>
             <legend>Datos personales</legend>
-            <label for="nombre">Nombre</label>
+
+            <label for="nombre">Nombre</label><br>
             <input type="text" id="nombre" name="nombre"><br>
 
-            <label for="apellidos">Apellidos</label>
+            <label for="apellidos">Apellidos</label><br>
             <input type="text" id="apellidos" name="apellidos"><br>
 
-              <label for="telefono">Teléfono</label>
+            <label for="telefono">Teléfono</label><br>
             <input type="tel" id="telefono" name="telefono"><br>
 
-            <label for="correo">Correo electrónico</label>
-            <input type="email" id="correo" name="correo">
+            <label for="correo">Correo electrónico</label><br>
+            <input type="email" id="correo" name="correo"><br>
+
+            <label for="direccion">Dirección</label><br>
+            <input type="text" id="direccion" name="direccion"><br>
+
+            <label for="codpost">Código postal</label><br>
+            <input type="number" id="codpost" name="codigo postal">
           </fieldset>
+
+          <!-- Tipo de contratación-->
+          <fieldset>
+            <legend>Tipo de contratación</legend>
+
+            <label for="sensores">Número de sensores a instalar:</label>
+            <input type="range" id="sensores" name="sensores" min="1" max="50"><br>
+
+            <p>Plan de suscipción</p>
+            <input type="radio" id="basico" name="suscripcion" value="basico">
+            <label for="basico">Básico</label>
+            <input type="radio" id="plus" name="suscripcion" value="plus">
+            <label for="plus">Plus</label>
+            <input type="radio" id="premium" name="suscripcion" value="premium">
+            <label for="premium">Premium</label>
+
+            <p>Facturación</p>
+            <input type="radio" id="factmens" name="facturacion" value="mensual">
+            <label for="factmens">Mensual</label>
+            <input type="radio" id="factan" name="facturacion" value="anual">
+            <label for="factan">Anual</label>
+          </fieldset>
+
+          <!-- Usuario y contraseña-->
+          <fieldset>
+            <legend>Acceso a miPortal</legend>
+            
+            <label for="usuario">Usuario:</label><br>
+            <input type="text" id="usuario" name="usuario"><br>
+
+            <label for="constrasena">Constraseña:</label><br>
+            <input type="password" id="contrasena" name="contrasena">
+          </fieldset>
+
+          <fieldset>
+            <legend>Observaciones</legend>
+            <label for="observaciones">Información adicional (opcional)</label><br>
+            <textarea id="observaciones" name="observaciones" rows="5" cols="80"></textarea>
+          </fieldset>
+
         </form>
       </main>
 

@@ -16,6 +16,7 @@ if (segundo_entrada <20) {
 const estados = {
     verde: {
         clase: "estado-verde",
+        luz: "V",
         titulo: "Todo OK",
         mensaje: "Tu huerto está en buen estado. No necesitas hacer nada.",
         datos: {humedad: 62, temperatura: 22, ambiente: 55, luz: 70, ph: 6.5, bateria: 88},
@@ -26,6 +27,7 @@ const estados = {
     },
     amarillo: {
         clase: "estado-amarillo",
+        luz: "A",
         titulo: "Requiere atención", 
         mensahe: "El huerto presenta valores atípicos. Conviene una revisión pronto.",
         datos: {humedad: 34, temperatura: 31, ambiente: 40, luz: 85, ph: 6.3, bateria: 55 },
@@ -35,6 +37,7 @@ const estados = {
     },
     rojo: {
         clase: "estado-rojo",
+        luz: "R",
         titulo: "Alerta crítica",
         mensaje: "Se han registrado valores peligrosos para tus cultivos. En necesario actuar cuanto antes.",
         datos: {humedad: 12, temperatura: 39, ambiente:25, luz: 95, ph: 5.1, bateria: 14}, 
@@ -58,3 +61,97 @@ const sensores = [
 ]
 
 // Para devolver la fecha en horas, minutos y segundos
+function formatoHora(fecha) {
+    let h
+    let m
+    let s
+    if(fecha.getHours() < 10) {
+        h = "0" + fecha.getHours();
+    } else { h = "" + fecha.getHours();}
+    if(fecha.getMinutes() < 10) {
+        m = "0" + fecha.getMinutes();
+    } else { m = "" + fecha.getMinutes();}
+    if(fecha.getSeconds() < 10) {
+        s = "0" + fecha.getSeconds();
+    } else { s = "" + fecha.getSeconds();}
+    return h + ":" + m + ":" + s;
+}
+
+// Aplicar el estado a la página
+function aplicarEstado() {
+    const estado = estados[estado_actual];
+    document.body.setAttribute("class", estado.clase);
+    document.getElementById("luz").innerHTML = estado.simbolo;
+    document.getElementById("titulo-estado").innerHTML = estado.titulo;
+    document.getElementById("mensaje-estado").innerHTML = estado.mensaje;
+    document.getElementById("hora-entrada").innerHTML = formatoHora(hora);
+
+    // Avisos (se crea un <li> por cada aviso)
+    const lista = document. getElementById("avisos");
+    for(let i = 0; i<estado.avisos.length; i++){
+        const li = document.createElement("li");
+        li.innerHTML = estados.avisos[i];
+        lista.appendChild(li);
+    }
+}
+
+// Tarjetas de los sensores
+function crearTarjetas(){
+    const contenedor = document. getElementById("sensores");
+    for (let i = 0; i < sensores.length; i++){
+        const s = sensores[i];
+
+        const tarjeta = document.createElement("div");
+        tarjeta.className = "sensor";
+        
+        const titulo = document.createElement("h3");
+        titulo.innerHTML = s.nombre; 
+
+        const valor = document.createElement("p");
+        valor.className = "valor";
+        s.spanValor = document.createElement("span");
+        const spanUnidad = document.createElement("span");
+        spanUnidad.className = "unidad";
+        spanUnidad.innerHTML = " " + s.unidad;
+        valor.appendChild(s.spanValor);
+        valor.appendChild(spanUnidad);
+
+        const barra = document.createElement("div");
+        barra.className = "barra";
+        s.relleno = document.createElement("div");
+        barra.appendChild(s.relleno);
+
+        tarjeta.appendChild(titulo);
+        tarjeta.appendChild(valor); 
+        tarjeta.appendChild(barra);
+        contenedor.appendChild(tarjeta);
+    }
+}
+
+// Para que parezca que los datos son en directo: cada 3 segundos los valores cambian un poco respecto de los base
+let tic = 0; 
+
+function mostrarValores() {
+    const base = esatdos[estado_actual].datos;
+
+    for (let i = 0; i < sensores.length; i++) {
+        const s = sensores[i];
+        const valor = base[s.id] + ((tic % 4) - 1.5)*s.variacion; 
+        s.spanValor.innerHTML = valor;
+        s.relleno.style.width = (valor/s.max*100) + "%";
+    }
+
+    document.getElementById("hora-actualizacion").innerHTML = formatoHora(new Date());
+}
+
+function tiempo() {
+    tic = tic + 1;
+    mostrarValores();
+}
+
+// Arrancar 
+
+aplicarEstado(); 
+crearTarjetas();
+mostrarValores(); 
+setInterval(tiempo, 3000);

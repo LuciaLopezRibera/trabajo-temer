@@ -16,7 +16,7 @@ if (segundo_entrada <20) {
 const estados = {
     verde: {
         clase: "estado-verde",
-        luz: "V",
+        luz: ":)",
         titulo: "Todo OK",
         mensaje: "Tu huerto está en buen estado. No necesitas hacer nada.",
         datos: {humedad: 62, temperatura: 22, ambiente: 55, luz: 70, ph: 6.5, bateria: 88},
@@ -27,9 +27,9 @@ const estados = {
     },
     amarillo: {
         clase: "estado-amarillo",
-        luz: "A",
+        luz: ":/",
         titulo: "Requiere atención", 
-        mensahe: "El huerto presenta valores atípicos. Conviene una revisión pronto.",
+        mensaje: "El huerto presenta valores atípicos. Conviene una revisión pronto.",
         datos: {humedad: 34, temperatura: 31, ambiente: 40, luz: 85, ph: 6.3, bateria: 55 },
         avisos: ["La humedad del suelo es baja.",
             "La temperatura es algo elevada para tus cultivos."
@@ -37,7 +37,7 @@ const estados = {
     },
     rojo: {
         clase: "estado-rojo",
-        luz: "R",
+        luz: ":(",
         titulo: "Alerta crítica",
         mensaje: "Se han registrado valores peligrosos para tus cultivos. En necesario actuar cuanto antes.",
         datos: {humedad: 12, temperatura: 39, ambiente:25, luz: 95, ph: 5.1, bateria: 14}, 
@@ -51,12 +51,12 @@ const estados = {
 
 // Lista de sensores: nombre, unidades, valor máximo, variación para dar sensación de directo
 const sensores = [
-    {id: "humedad", nombre: "Humedad del suelo", unidad: "%", max: 100, variacion: 1},
-    {id: "temperatura", nombre: "Temperatura", unidad: "ºC", max: 50, variacion: 0.4},
-    {id: "ambiente", nombre: "Humedad del aire", unidad: "%", max: 100, variacion: 1},
-    {id: "luz", nombre: "Luz solar", unidad: "%", max: 100, variacion: 2},
-    {id: "ph", nombre: "pH del suelo", unidad: "", max: 14, variacion: 0.1},
-    {id: "bateria", nombre: "Batería de las estacas", unidad: "%", max: 100, variacion: 0.5}
+    {id: "humedad", icono: "humedad.svg", nombre: "Humedad del suelo", unidad: "%", max: 100, variacion: 1, decimales: 1},
+    {id: "temperatura", icono: "temperatura.svg", nombre: "Temperatura", unidad: "ºC", max: 50, variacion: 0.4, decimales: 1},
+    {id: "ambiente", icono: "aire.svg", nombre: "Humedad del aire", unidad: "%", max: 100, variacion: 1, decimales: 1},
+    {id: "luz", icono: "luz.svg", nombre: "Luz solar", unidad: "%", max: 100, variacion: 2, decimales: 0},
+    {id: "ph", icono: "ph.svg", nombre: "pH del suelo", unidad: "", max: 14, variacion: 0.1, decimales: 2},
+    {id: "bateria", icono: "bateria.svg", nombre: "Batería de las estacas", unidad: "%", max: 100, variacion: 0.5, decimales: 1}
 
 ]
 
@@ -81,7 +81,7 @@ function formatoHora(fecha) {
 function aplicarEstado() {
     const estado = estados[estado_actual];
     document.body.setAttribute("class", estado.clase);
-    document.getElementById("luz").innerHTML = estado.simbolo;
+    document.getElementById("luz").innerHTML = estado.luz;
     document.getElementById("titulo-estado").innerHTML = estado.titulo;
     document.getElementById("mensaje-estado").innerHTML = estado.mensaje;
     document.getElementById("hora-entrada").innerHTML = formatoHora(hora);
@@ -90,7 +90,7 @@ function aplicarEstado() {
     const lista = document. getElementById("avisos");
     for(let i = 0; i<estado.avisos.length; i++){
         const li = document.createElement("li");
-        li.innerHTML = estados.avisos[i];
+        li.innerHTML = estado.avisos[i];
         lista.appendChild(li);
     }
 }
@@ -105,7 +105,14 @@ function crearTarjetas(){
         tarjeta.className = "sensor";
         
         const titulo = document.createElement("h3");
-        titulo.innerHTML = s.nombre; 
+        const icono = document.createElement("img");
+        icono.src = "../img/" + s.icono;
+        icono.alt = "";
+        icono.className = "icono";
+        const nombre = document.createElement("span");
+        nombre.innerHTML = s.nombre;
+        titulo.appendChild(icono);
+        titulo.appendChild(nombre); 
 
         const valor = document.createElement("p");
         valor.className = "valor";
@@ -132,12 +139,12 @@ function crearTarjetas(){
 let tic = 0; 
 
 function mostrarValores() {
-    const base = esatdos[estado_actual].datos;
+    const base = estados[estado_actual].datos;
 
     for (let i = 0; i < sensores.length; i++) {
         const s = sensores[i];
         const valor = base[s.id] + ((tic % 4) - 1.5)*s.variacion; 
-        s.spanValor.innerHTML = valor;
+        s.spanValor.innerHTML = valor.toFixed(s.decimales);
         s.relleno.style.width = (valor/s.max*100) + "%";
     }
 
@@ -154,4 +161,4 @@ function tiempo() {
 aplicarEstado(); 
 crearTarjetas();
 mostrarValores(); 
-setInterval(tiempo, 3000);
+setInterval(tiempo, 10000);

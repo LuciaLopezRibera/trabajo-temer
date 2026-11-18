@@ -3,25 +3,37 @@ body{
     transition: background-color 1s; /*Para que un cambio del color del fondo se anime tardando 1 seg*/
 }
 
-body.estado-verde {background-color: #d0f7ad;}
-body.estado-amarillo {background-color: #fcdb60;}
-body.estado-rojo {background-color: #fcb7ae;}
+body.estado-verde {background-color: white ;} /* #d0f7ad */
+body.estado-amarillo {background-color: white;} /* #fcdb60 */
+body.estado-rojo {background-color: white ;} /* #fcb7ae */
 
 body.estado-verde .muestra {background-color: #6aa87a;}
 body.estado-amarillo .muestra {background-color: #f0a030;}
 body.estado-rojo .muestra {background-color: #d9534f;}
 
-body.estado-verde .sensor {border-color: #6aa87a;}
-body.estado-amarillo .sensor {border-color: #f0a030;}
-body.estado-rojo .sensor {border-color: #d9534f;}
+body.estado-verde .sensor {
+    border-color: #6aa87a;
+    background-color: rgb(206, 249, 193);}
+body.estado-amarillo .sensor {
+    border-color: #f0a030;
+    background-color: rgb(238, 251, 145);}
+body.estado-rojo .sensor {
+    border-color: #d9534f;
+    background-color: rgb(243, 195, 195);}
 
 body.estado-verde .barra div {background-color: #6aa87a;}
 body.estado-amarillo .barra div {background-color: #f0a030;}
 body.estado-rojo .barra div {background-color: #d9534f;}
 
-body.estado-verde .avisos li {border-left-color: #6aa87a;}
-body.estado-amarillo .avisos li {border-left-color: #f0a030;}
-body.estado-rojo .avisos li {border-left-color: #d9534f;}
+body.estado-verde .avisos li {
+    border-left-color: #6aa87a;
+    background-color: rgb(206, 249, 193);}
+body.estado-amarillo .avisos li {
+    border-left-color: #f0a030;
+    background-color: rgb(238, 251, 145);}
+body.estado-rojo .avisos li {
+    border-left-color: #d9534f;
+    background-color: rgb(243, 195, 195);}
 
 body.estado-verde footer {background-color: #6aa87a;}
 body.estado-amarillo footer {background-color: #f0a030;}
@@ -92,7 +104,7 @@ body.estado-rojo .luz-estado {color: #d9534f;}
     flex-shrink: 1; /* Puede encogerse. Si falta espacia el elemento se encoge para caber */
     flex-basis: 30%; /* Tamaño inicial (respecto al contenedor) */
     min-width: 200px;
-    background-color: white;
+    background-color: rgb(238, 251, 145);
     border-width: 3px;
     border-style: solid;
     border-radius: 16px;
@@ -103,13 +115,23 @@ body.estado-rojo .luz-estado {color: #d9534f;}
     transition: transform 0.3s; /* Las transformaciones de forma duran 0.3segs */
 }
 
+
+
 .sensor:hover{ /* Cuando se pasa el ratón por encima del sensor se hace un poco más grande */
     transform:scale(1.04);
 }
 
 .sensor h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 8px;
     font-size: 1.05em;
+}
+
+.sensor .icono {
+    width: 36px; 
+    height: 36px;
 }
 
 .sensor .valor{

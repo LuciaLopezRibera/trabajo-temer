@@ -27,7 +27,7 @@
 
       <main>
         <h1>Contratar miHuertapp</h1>
-        <form name="formulario" action="confirmacion.html">
+        <form name="formulario" id="formulario" action="confirmacion.html">
           <!-- Datos Personales-->
           <fieldset>
             <legend>Datos personales</legend>
@@ -51,7 +51,7 @@
                 <input type="email" id="correo" name="correo" placeholder="maria@gmail.com"><br>
 
                 <label for="codpost">Código postal</label><br>
-                <input type="text" id="codpost" name="codigo postal" placeholder="46022">
+                <input type="text" id="codpost" name="codpost" placeholder="46022">
               </div>     
             </div>       
           </fieldset>
@@ -60,10 +60,19 @@
           <fieldset>
             <legend>Tipo de contratación</legend>
 
-            <label for="sensores">Número de sensores a instalar:</label>
-            <input type="range" id="sensores" name="sensores" min="1" max="50" value="1"><br>
+            <label for="estacas">Número de estacas:</label>
+            <span id="valor-estacas" class="valor">1</span><br>
+            <input type="range" id="estacas" name="estacas" min="1" max="50" value="1"><br>
 
-            <p>Plan de suscipción</p>
+            <label for="nodos">Número de nodos:</label>
+            <span id="valor-nodos" class="valor">1</span><br>
+            <input type="range" id="nodos" name="nodos" min="1" max="50" value="1"><br>
+
+            <label for="camaras">Número de cámaras:</label>
+            <span id="valor-camaras" class="valor">1</span><br>
+            <input type="range" id="camaras" name="camaras" min="1" max="50" value="1"><br>
+
+            <p id="titSuscripcion">Plan de suscipción</p>
             <input type="radio" id="basico" name="suscripcion" value="basico">
             <label for="basico">Básico</label>
             <input type="radio" id="plus" name="suscripcion" value="plus">
@@ -71,7 +80,7 @@
             <input type="radio" id="premium" name="suscripcion" value="premium">
             <label for="premium">Premium</label>
 
-            <p>Facturación</p>
+            <p id="titFacturacion">Facturación</p>
             <input type="radio" id="factmens" name="facturacion" value="mensual">
             <label for="factmens">Mensual</label>
             <input type="radio" id="factan" name="facturacion" value="anual">
@@ -85,7 +94,7 @@
             <label for="usuario">Usuario:</label><br>
             <input type="text" id="usuario" name="usuario" placeholder="nombre_usuario"><br>
 
-            <label for="constrasena">Constraseña:</label><br>
+            <label for="contrasena">Constraseña:</label><br>
             <input type="password" id="contrasena" name="contrasena" placeholder="contraseña">
           </fieldset>
 

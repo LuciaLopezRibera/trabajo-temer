@@ -28,81 +28,96 @@
       <main>
         <h1>Contratar miHuertapp</h1>
         <form name="formulario" id="formulario" action="confirmacion.html">
-          <!-- Datos Personales-->
-          <fieldset>
-            <legend>Datos personales</legend>
-            <div class="datosPersonales">
-              <div class="izq">
-                <label for="nombre">Nombre</label><br>
-                <input type="text" id="nombre" name="nombre" placeholder="María"><br>
+          <div class="form">
+            <div class="form-izq">
+            <!-- Datos Personales-->
+            <fieldset>
+              <legend>Datos personales</legend>
+              <div class="datosPersonales">
+                <div class="izq">
+                  <label for="nombre">Nombre</label><br>
+                  <input type="text" id="nombre" name="nombre" placeholder="María"><br>
 
-                <label for="telefono">Teléfono</label><br>
-                <input type="tel" id="telefono" name="telefono" placeholder="652123968"><br>
+                  <label for="telefono">Teléfono</label><br>
+                  <input type="tel" id="telefono" name="telefono" placeholder="652123968"><br>
 
-                <label for="direccion">Dirección</label><br>
-                <input type="text" id="direccion" name="direccion" placeholder="Camí de Vera, Valencia"><br>
-              </div>
+                  <label for="direccion">Dirección</label><br>
+                  <input type="text" id="direccion" name="direccion" placeholder="Camí de Vera, Valencia"><br>
+                </div>
 
-              <div class="der">
-                <label for="apellidos">Apellidos</label><br>
-                <input type="text" id="apellidos" name="apellidos" placeholder="García Fernández"><br>
+                <div class="der">
+                  <label for="apellidos">Apellidos</label><br>
+                  <input type="text" id="apellidos" name="apellidos" placeholder="García Fernández"><br>
 
-                <label for="correo">Correo electrónico</label><br>
-                <input type="email" id="correo" name="correo" placeholder="maria@gmail.com"><br>
+                  <label for="correo">Correo electrónico</label><br>
+                  <input type="email" id="correo" name="correo" placeholder="maria@gmail.com"><br>
 
-                <label for="codpost">Código postal</label><br>
-                <input type="text" id="codpost" name="codpost" placeholder="46022">
-              </div>     
-            </div>       
-          </fieldset>
+                  <label for="codpost">Código postal</label><br>
+                  <input type="text" id="codpost" name="codpost" placeholder="46022">
+                </div>     
+              </div>       
+            </fieldset>
 
-          <!-- Tipo de contratación-->
-          <fieldset>
-            <legend>Tipo de contratación</legend>
+            <!-- Tipo de contratación-->
+            <fieldset>
+              <legend>Tipo de contratación</legend>
 
-            <label for="estacas">Número de estacas:</label>
-            <span id="valor-estacas" class="valor">1</span><br>
-            <input type="range" id="estacas" name="estacas" min="1" max="50" value="1"><br>
+              <label for="estacas">Número de estacas:</label>
+              <span id="valor-estacas" class="valor">0</span><br>
+              <input type="range" id="estacas" name="estacas" min="0" max="50" value="0"><br>
 
-            <label for="nodos">Número de nodos:</label>
-            <span id="valor-nodos" class="valor">1</span><br>
-            <input type="range" id="nodos" name="nodos" min="1" max="50" value="1"><br>
+              <label for="nodos">Número de nodos:</label>
+              <span id="valor-nodos" class="valor">0</span><br>
+              <input type="range" id="nodos" name="nodos" min="0" max="50" value="0"><br>
 
-            <label for="camaras">Número de cámaras:</label>
-            <span id="valor-camaras" class="valor">1</span><br>
-            <input type="range" id="camaras" name="camaras" min="1" max="50" value="1"><br>
+              <label for="camaras">Número de cámaras:</label>
+              <span id="valor-camaras" class="valor">0</span><br>
+              <input type="range" id="camaras" name="camaras" min="0" max="50" value="0"><br>
 
-            <p id="titSuscripcion">Plan de suscipción</p>
-            <input type="radio" id="basico" name="suscripcion" value="basico">
-            <label for="basico">Básico</label>
-            <input type="radio" id="plus" name="suscripcion" value="plus">
-            <label for="plus">Plus</label>
-            <input type="radio" id="premium" name="suscripcion" value="premium">
-            <label for="premium">Premium</label>
+              <p id="titSuscripcion">Plan de suscipción</p>
+              <input type="radio" id="basico" name="suscripcion" value="basico">
+              <label for="basico">Básico</label>
+              <input type="radio" id="plus" name="suscripcion" value="plus">
+              <label for="plus">Plus</label>
+              <input type="radio" id="premium" name="suscripcion" value="premium">
+              <label for="premium">Premium</label>
 
-            <p id="titFacturacion">Facturación</p>
-            <input type="radio" id="factmens" name="facturacion" value="mensual">
-            <label for="factmens">Mensual</label>
-            <input type="radio" id="factan" name="facturacion" value="anual">
-            <label for="factan">Anual</label>
-          </fieldset>
+              <p id="titFacturacion">Facturación</p>
+              <input type="radio" id="factmens" name="facturacion" value="mensual">
+              <label for="factmens">Mensual</label>
+              <input type="radio" id="factan" name="facturacion" value="anual">
+              <label for="factan">Anual</label>
+            </fieldset>
 
-          <!-- Usuario y contraseña-->
-          <fieldset>
-            <legend>Acceso a miPortal</legend>
-            
-            <label for="usuario">Usuario:</label><br>
-            <input type="text" id="usuario" name="usuario" placeholder="nombre_usuario"><br>
+            <!-- Usuario y contraseña-->
+            <fieldset>
+              <legend>Acceso a miPortal</legend>
+              
+              <label for="usuario">Usuario:</label><br>
+              <input type="text" id="usuario" name="usuario" placeholder="nombre_usuario"><br>
 
-            <label for="contrasena">Constraseña:</label><br>
-            <input type="password" id="contrasena" name="contrasena" placeholder="contraseña">
-          </fieldset>
+              <label for="contrasena">Constraseña:</label><br>
+              <input type="password" id="contrasena" name="contrasena" placeholder="contraseña">
+            </fieldset>
 
-          <fieldset>
-            <legend>Observaciones</legend>
-            <label for="observaciones">Información adicional (opcional)</label><br>
-            <textarea id="observaciones" name="observaciones" rows="5" cols="80" placeholder="Escribe tu mensaje..."></textarea>
-          </fieldset>
+            <fieldset>
+              <legend>Observaciones</legend>
+              <label for="observaciones">Información adicional (opcional)</label><br>
+              <textarea id="observaciones" name="observaciones" rows="5" cols="80" placeholder="Escribe tu mensaje..."></textarea>
+            </fieldset>
+            </div>
+
+            <div class="resumen">
+            <fieldset class="field-resumen">
+            <legend>Resumen</legend>
+            <p><span class="sub-resumen">Plan: </span><span id="res-plan"></span></p>
+            <p><span class="sub-resumen">Facturación: </span><span id="res-facturacion"></span></p>
+            <p><span class="sub-resumen">Instalación: </span><span id="res-instalacion"></span></p>
+            <p><span class="sub-resumen">Suscripción: </span><span id="res-suscripcion"></span></p>
+            <p class="total">Total: <span id="res-total"></span></p>
+            </fieldset>
+            </div>
+          </div>
 
           <button type="submit" class="boton-contratar">Contratar</button>
         </form>

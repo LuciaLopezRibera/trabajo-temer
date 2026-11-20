@@ -70,16 +70,12 @@ formulario.addEventListener("submit", function(evento){
 
 // RESUMEN
 
-const precio_estaca=29.9;
-const precio_nodo=34.9;
-const precio_camara=20.9;
-
 formulario.addEventListener("input", actualizarResumen);
 
 function actualizarResumen(){
     // ACTUALIZO EL PLAN
     let plan = document.querySelector('input[name="suscripcion"]:checked');
-    let tipo_plan = "Sin elegir";
+    let tipo_plan = "-";
     let precio_plan = 0;
 
     // cuando se marque la casilla en el formulario, que se actualice
@@ -99,7 +95,7 @@ function actualizarResumen(){
 
     // ACTUALIZO FACTURACION
     let facturacion = document.querySelector('input[name="facturacion"]:checked');
-    let tipo_facturacion = "Sin elegir";
+    let tipo_facturacion = "-";
     let coste_suscripcion="-";
     let descuento_suscr="";
 
@@ -108,13 +104,13 @@ function actualizarResumen(){
         if (facturacion.value === "mensual") {
             tipo_facturacion = "Mensual";
             if (plan !== null) { // para que si no se ha marcado todavia el plan no se actualizo porque si no me va a salir 0
-                coste_suscripcion=precio_plan+ "€/mes";
+                coste_suscripcion=precio_plan+ " €/mes";
             }
         } else if (facturacion.value === "anual") {
             tipo_facturacion = "Anual";
             if (plan !== null) {
-                coste_suscripcion=precio_plan*12*0.8+ "€/año";
-                descuento_suscr="descuento de "+ precio_plan*0.2*12 + "€/año en la suscripción.";
+                coste_suscripcion=precio_plan*12*0.8+ " €/año";
+                descuento_suscr="descuento de "+ precio_plan*0.2*12 + " €/año en la suscripción.";
             }
         }
     }
@@ -125,12 +121,48 @@ function actualizarResumen(){
     // actualizo descuento
     document.getElementById("res-descuento-suscr").textContent =descuento_suscr;
 
-    // calculo el precio de las estacas, nodos y camaras
+    // CALCULO PRECIO DE LOS EQUIPOS
+    const precio_estaca=29.9;
+    const precio_nodo=34.9;
+    const precio_camara=20.9;
 
-    // actualizo el precio de la instalacion
+    let coste_estacas=0;
+    let coste_nodos=0;
+    let coste_camaras=0;
+    let est_gratis=0;
+    let nodos_gratis=0;
+    let cam_gratis=0;
+    let coste_equipos=0 + " €";
+    let descuento_equip="";
+    let i;
 
-    
+    // coste estacas
+    for (i = 10; i <= estacas.value; i = i + 10) {// Cada vez que tenemos paquetes de 10, hay 2 estacas gratis
+        est_gratis = est_gratis + 2;
+    }
+    coste_estacas=(estacas.value-est_gratis)*precio_estaca;
 
+    // coste nodos
+    for (i = 10; i <= nodos.value; i = i + 10) {
+        nodos_gratis = nodos_gratis + 2;
+    }
+    coste_nodos=(nodos.value-nodos_gratis)*precio_nodo;
+
+    // coste camaras
+    for (i = 10; i <= camaras.value; i = i + 10) {
+        cam_gratis = cam_gratis + 2;
+    }
+    coste_camaras=(camaras.value-cam_gratis)*precio_camara;
+
+    // actualizo el precio de la instalacion y el descuento
+    if(cam_gratis!=0 || nodos_gratis!=0 || est_gratis!=0){//para que solo salga el mensaje si hay algun descuento
+        descuento_equip="descuento de "+ (est_gratis*precio_estaca+nodos_gratis*precio_nodo+cam_gratis*precio_camara).toFixed(2) + "€ en los equipos.";
+    }
+
+    coste_equipos=(coste_estacas+coste_camaras+coste_nodos).toFixed(2) + " €";
+
+    document.getElementById("res-equipos").textContent =coste_equipos;
+    document.getElementById("res-descuento-equip").textContent =descuento_equip;
 }
 
 actualizarResumen(); //para que nada más cargar la pagina salga relleno con el texto por defecto

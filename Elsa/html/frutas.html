@@ -28,7 +28,7 @@
       <h2>Guía de cultivos</h2>
 
       <div class="filtros">
-        <label>Tipo
+        <label>Tipo:
           <select id="filtro-tipo" onchange="mostrarCultivos()">
             <option value="todos">Todos</option>
             <option value="fruta">Frutas</option>
@@ -36,17 +36,7 @@
           </select>
         </label>
 
-        <label>Temporada
-          <select id="filtro-temporada" onchange="mostrarCultivos()">
-            <option value="todas">Todas</option>
-            <option value="primavera">Primavera</option>
-            <option value="verano">Verano</option>
-            <option value="otonyo">Otoño</option>
-            <option value="invierno">Invierno</option>
-          </select>
-        </label>
-
-        <label>Color
+        <label>Color:
           <select id="filtro-color" onchange="mostrarCultivos()">
             <option value="todos">Todos</option>
             <option value="rojo">Rojo</option>
@@ -58,7 +48,17 @@
           </select>
         </label>
 
-        <label>Orden
+        <label>Temporada:
+          <select id="filtro-temporada" onchange="mostrarCultivos()">
+            <option value="todas">Todas</option>
+            <option value="primavera">Primavera</option>
+            <option value="verano">Verano</option>
+            <option value="otonyo">Otoño</option>
+            <option value="invierno">Invierno</option>
+          </select>
+        </label>
+
+        <label>Orden:
           <select id="filtro-orden" onchange="mostrarCultivos()">
             <option value="az">A &rarr; Z</option>
             <option value="za">Z &rarr; A</option>
@@ -79,6 +79,7 @@
     </footer>
   </div>
 
+  <script src="../js/cultivos.js"></script>
   <script src="../js/frutas.js"></script>
 </body>
 </html>

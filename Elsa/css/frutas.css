@@ -1,1 +1,23 @@
-/* Estilos de la página frutas - Responsable: Elsa */
+/* Estilos de la página frutas - Responsable: Elsa Blasco Novell */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    background-color: #eff7ea;
+    padding: 15px;
+    border-radius: 20px;
+
+}
+.filtros label {
+    display: flex;
+    gap: 10px;
+    color: #2d6a4f;
+    font-weight: bold;
+}
+.filtros select {
+    padding: 2px;
+    border-radius: 18px;
+    border: 2px solid #c5dfb5;
+    cursor: pointer;
+}

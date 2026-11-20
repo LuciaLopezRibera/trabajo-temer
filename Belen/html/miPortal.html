@@ -9,12 +9,35 @@
   <link rel="icon" href="../../img/logo_icono.jpg" type="image/jpeg">
 </head>
 <body>
-   <div class="contenido">
+   <div class="miportal">
         <!-- cabecera -->
         <header>
         <img src="../../img/logo_icono.jpg" alt="">
         <h1><img src="../../img/logo_texto.jpg" alt="miHuertapp"></h1>
+        <a href="../../principal.html" class="boton-portal">Volver a la página principal</a>
         </header>
+
+        <main>
+          <div class="cuadros">
+            <h1>Acceder a miPortal</h1>
+            <form name="formulario_inicio" id="formulario_inicio" action="../../Lucia/html/estado.html">
+              <label for="usuario">Usuario:</label><br>
+              <input type="text" id="usuario" name="usuario" placeholder="nombre_usuario"><br>
+
+              <label for="contrasena">Constraseña:</label><br>
+              <input type="password" id="contrasena" name="contrasena" placeholder="contraseña"><br>
+
+              <button type="submit" class="botones">Iniciar sesión</button>
+
+            </form>
+          </div>
+
+          <div class="cuadros">
+            <h1>¿Todavía no tienes cuenta?</h1>
+            <p>Date de alta en miHuertapp y empieza y empieza a cuidar tu huerto de forma digital.</p>
+            <a href="contratar.html" class="botones">Contratar</a>
+          </div>
+        </main>
 
         <!-- pie de pagina -->
         <footer> 

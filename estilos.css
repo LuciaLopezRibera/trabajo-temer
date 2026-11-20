@@ -52,7 +52,7 @@ a:hover {
 }
 
 
-/* ---------- Barra de navegacion lateral ---------- */
+/* ---------- Barra de navegacion lateral DE LA WEB ---------- */
 nav {
   width: 180px;
   height: 100vh;                       /* siempre el alto de la ventana*/
@@ -97,6 +97,19 @@ nav a:hover {
 nav a.activa {
   background-color: #d6ebc8;         
 }
+
+/* ---------- Barra de navegacion lateral DE INICIO ---------- */
+nav.portal {
+  background-color: #eff7ea;
+}
+nav.portal a:hover {
+  background-color: #d6ebc8;
+}
+nav.portal a.activa {
+  background-color: #6a9a4f;
+  color: white;
+}
+
 
 
 

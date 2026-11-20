@@ -129,18 +129,16 @@ input[type="range"]{
 }
 
 .field-resumen{
-  background-color: #c5f4a9;
+  background-color: #cef8b5;
 }
 
-
-.total{
-  color: #2e5e46;
-  font-weight: bold;
-  font-size: 1.6em; 
-}
 
 .sub-resumen{
   color: #2e5e46;
   font-weight: bold;
-  font-size: 1.1em; 
+  font-size: 1.2em; 
+}
+
+.descuento{
+  color: #4d9370; 
 }

@@ -1,4 +1,6 @@
 /* Estilos de la página frutas - Responsable: Elsa Blasco Novell */
+
+/* ---------- Filtros de arriba del todo ---------- */
 .filtros {
     display: flex;
     flex-wrap: wrap;
@@ -20,4 +22,47 @@
     border-radius: 18px;
     border: 2px solid #c5dfb5;
     cursor: pointer;
+}
+
+
+/* ---------- Lista de cultivos ---------- */
+.lista-cultivos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 45px;
+
+}
+.cultivo { /* caja entera de cada cultivo --> foto + nombre*/
+    width: 160px;
+    height: 160px;
+    text-align: center;
+    cursor: pointer;
+    
+
+}
+.cultivo img {
+    border-radius: 50%;
+    border: 4px solid #c5dfb5;
+    width: 140px;
+    height: 140px;
+    object-fit: contain; /* como se ajusta una img o video dentro de su caja */
+    /*  fill: estira o deforma la img para llenar la caja, por defecto
+        contain: cabe entera sin deformarse, pero puede dejar huecos vacios
+        cover: llena toda la caja recortando lo que sobre, sin deformarla
+        none: mantiene su tamaño original ignorando la caja
+        scale-down: elige automaticamente entre none o contain, el que la deje mas pequenya
+    */
+    padding: 15px; /* espacio entre el aro y la foto */
+    transition: transform 0.5s, border-color 0.5s;
+}
+.cultivo p{
+    font-weight: bold;
+    color: #2d6a4f;
+    margin-top: 8px;
+}
+.cultivo img:hover {
+    transform: scale(1.1);
+    border-color: #6a9a4f;
 }

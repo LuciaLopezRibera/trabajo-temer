@@ -3,7 +3,7 @@
 
 const cultivos = [
 
-    {id:"berenjena",  nombre: "Berenjena", tipo: "verdura", temporada: "verano",    color:"morado",    imagen: "beremjena.jpg"},
+    {id:"berenjena",  nombre: "Berenjena", tipo: "verdura", temporada: "verano",    color:"morado",    imagen: "berenjena.jpg"},
 
     {id: "calabacin", nombre: "Calabacín", tipo: "verdura", temporada: "verano",    color: "verde",    imagen: "calabacin.jpg"},
 
@@ -23,12 +23,12 @@ const cultivos = [
 
     {id: "naranja",   nombre: "Naranja",   tipo: "fruta",   temporada: "invierno",  color: "naranja",  imagen: "naranja.jpg"},
 
-    {id: "pimiento",  nombre: "Pimiento",  tipo: "verdura", temporada: "verano",    color: "rojo",     imagen: "pimiento.png"},
+    {id: "pimiento",  nombre: "Pimiento",  tipo: "verdura", temporada: "verano",    color: ["rojo", "verde", "amarillo", "naranja"], imagen: "pimiento.jpg"},
 
-    {id: "sandia",    nombre: "Sandía",    tipo: "fruta",   temporada: "verano",    color: "verde",    imagen: "sandia.jpg"},
+    {id: "sandia",    nombre: "Sandía",    tipo: "fruta",   temporada: "verano",    color: ["rojo", "verde"],    imagen: "sandia.jpg"},
 
     {id: "tomate",    nombre: "Tomate",    tipo: "verdura", temporada: "verano",    color: "rojo",     imagen: "tomate.jpg"},
 
-    {id: "uva",       nombre: "Uva",       tipo: "fruta",   temporada: "otono",     color: "morado",   imagen: "uva.jpg"}
+    {id: "uva",       nombre: "Uva",       tipo: "fruta",   temporada: "otono",     color: ["morado", "verde"],   imagen: "uva.jpg"}
 
 ];

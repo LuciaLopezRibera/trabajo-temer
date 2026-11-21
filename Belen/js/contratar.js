@@ -64,6 +64,10 @@ formulario.addEventListener("submit", function(evento){
     if (relleno == 0) {
         evento.preventDefault();      // nos quedamos en esta página
         alert("¡Error! Falta algún campo por rellenar.");
+    }else{
+        // me almaceno el usuario y cotrasena introducido para poder entrar en miPortal
+        localStorage.setItem("usuario_nuevo", document.getElementById("usuario").value);
+        localStorage.setItem("contrasena_nueva", document.getElementById("contrasena").value)
     }
 });
 

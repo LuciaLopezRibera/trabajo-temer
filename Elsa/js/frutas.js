@@ -74,8 +74,13 @@ function mostrarCultivos() {
     }
 
     for  (const cultivo of lista) {
-        const caja = document.createElement("div"); // cajita para cada cultivo --> pondremos su foto y nombre
-        caja.setAttribute("class", "cultivo"); // al div (la cajita) le ponemos class = "cultivo"
+        const caja = document.createElement("a"); // cajita para cada cultivo --> pondremos su foto y nombre
+        
+        // queremos algo del estilo: <a class="cultivo" href="ficha.html" target="_blank" onclick="guardarCultivo('tomate')">
+        caja.setAttribute("class", "cultivo");   // al enlace/cajita de cada cultivo le ponemos class = "cultivo"
+        caja.setAttribute("href", "fichas.html"); // lleva a la ficha
+        caja.setAttribute("target", "_blank");   // la abre en otra pestaña
+        caja.setAttribute("onclick", "guardarCultivo('" + cultivo.id + "')");  // al pulsar guardamos que cultivo es
 
         const foto = document.createElement("img");
         foto.setAttribute("src", "../img/cultivos/" + cultivo.imagen);
@@ -92,6 +97,10 @@ function mostrarCultivos() {
     
 
 
+}
+
+function guardarCultivo(id) {
+    localStorage.setItem("cultivoElegido", id); // gaurdamos en el navegador el id del cultivo pulsado para que ficha.html sepa cual mostrar
 }
 
 mostrarCultivos();

@@ -39,6 +39,7 @@
     height: 160px;
     text-align: center;
     cursor: pointer;
+    text-decoration: none; /* porque es un enlace y querems quitar el subrayado */
     
 
 }

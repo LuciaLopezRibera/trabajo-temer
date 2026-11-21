@@ -1,0 +1,65 @@
+/* Estilos de la ficha de cada cultivo - Responsable: Elsa Blasco Novell */
+
+/* ------------- Portada ------------*/
+.portada {
+    position: relative; /* como se ubica el elemento y respecto a que se mueve, tema 4 diap 5 */
+    /* static: posicionamiento normal, por defecto
+       relative: se desplaza respecto a su posicion normal
+       absolute: se ubica respecto a su ancestro mas cercano no static
+       fixed: se queda congelado en la pantalla aunque hagas scroll
+       sticky: pasa de relative a fixed al hacer scroll
+    */
+    border-radius: 20px;
+    overflow: hidden;   /* lo que se sale de la caja (las esquinas de la imagen) no se ven */
+}
+.portada img {
+    display: block; /* como se comporta la caja del elemento */
+    /* block: ocupa todo el ancho y empieza en linea nueva
+       inline: en linea como una palabra; ignora width, height y margin/padding verticales
+       inline-block: en linea, pero acepta width, height, margin y padding
+       none: desaparece y no ocupa espacio
+       flex: coloca a sus hijos en fila o columna
+    */
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    /* fill: estira o deforma la img para llenar la caja, por defecto
+       contain: cabe entera sin deformarse, pero puede dejar huecos vacios
+       cover: llena toda la caja recortando lo que sobre, sin deformarla
+       none: mantiene su tamaño original ignorando la caja
+       scale-down: elige automaticamente entre none o contain, el que la deje mas pequenya
+    */
+}
+.portada-texto {
+    position: absolute; /* encima de la imagen */
+    left: 0px;     
+    right: 0px;             
+    bottom: 70px;                
+    background-color: rgba(255, 255, 255, 0.78);  /* franja blanca transparentosa */
+    padding-left: 30px; 
+    padding-right: 30px; 
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.portada-texto h2 {
+    font-size: 3em;
+    margin: 0px;
+}
+.portada-texto p {
+    color: #6a9a4f;
+    font-weight: bold;
+    margin: 0px;
+}
+
+
+/* ------------- Pie ------------*/
+.pie-cultivo {
+    text-align: center;
+    margin-top: 60px;
+}
+.pie-cultivo img {
+    height: 100px;
+}
+main {
+    padding-bottom: 0;   /* para que el pie quede pegado al footer */
+}

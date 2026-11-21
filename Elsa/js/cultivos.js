@@ -3,32 +3,32 @@
 
 const cultivos = [
 
-    {id:"berenjena",  nombre: "Berenjena", tipo: "verdura", temporada: "verano",    color:"morado",    imagen: "berenjena.jpg"},
+    {id:"berenjena",  nombre: "Berenjena", tipo: "Verdura", temporada: "verano",    color:"morado",    imagen: "berenjena.jpg"},
 
-    {id: "calabacin", nombre: "Calabacín", tipo: "verdura", temporada: "verano",    color: "verde",    imagen: "calabacin.jpg"},
+    {id: "calabacin", nombre: "Calabacín", tipo: "Verdura", temporada: "verano",    color: "verde",    imagen: "calabacin.jpg"},
 
-    {id: "calabaza",  nombre: "Calabaza",  tipo: "verdura", temporada: "otono",     color: "naranja",  imagen: "calabaza.jpg"},
+    {id: "calabaza",  nombre: "Calabaza",  tipo: "Verdura", temporada: "otoño",     color: "naranja",  imagen: "calabaza.jpg"},
 
-    {id: "cereza",    nombre: "Cereza",    tipo: "fruta",   temporada: "primavera", color: "rojo",     imagen: "cereza.jpg"},
+    {id: "cereza",    nombre: "Cereza",    tipo: "Fruta",   temporada: "primavera", color: "rojo",     imagen: "cereza.jpg"},
 
-    {id: "coliflor",  nombre: "Coliflor",  tipo: "verdura", temporada: "invierno",  color: "blanco",   imagen: "coliflor.jpg"},
+    {id: "coliflor",  nombre: "Coliflor",  tipo: "Verdura", temporada: "invierno",  color: "blanco",   imagen: "coliflor.jpg"},
 
-    {id: "fresa",     nombre: "Fresa",     tipo: "fruta",   temporada: "primavera", color: "rojo",     imagen: "fresa.jpg"},
+    {id: "fresa",     nombre: "Fresa",     tipo: "Fruta",   temporada: "primavera", color: "rojo",     imagen: "fresa.jpg"},
 
-    {id: "guisantes", nombre: "Guisantes", tipo: "verdura", temporada: "primavera", color: "verde",    imagen: "guisantes.jpg"},
+    {id: "guisantes", nombre: "Guisantes", tipo: "Verdura", temporada: "primavera", color: "verde",    imagen: "guisantes.jpg"},
 
-    {id: "lechuga",   nombre: "Lechuga",   tipo: "verdura", temporada: "invierno",  color: "verde",    imagen: "lechuga.jpg"},
+    {id: "lechuga",   nombre: "Lechuga",   tipo: "Verdura", temporada: "invierno",  color: "verde",    imagen: "lechuga.jpg"},
 
-    {id: "limon",     nombre: "Limón",     tipo: "fruta",   temporada: "invierno",  color: "amarillo", imagen: "limon.jpg"},
+    {id: "limon",     nombre: "Limón",     tipo: "Fruta",   temporada: "invierno",  color: "amarillo", imagen: "limon.jpg"},
 
-    {id: "naranja",   nombre: "Naranja",   tipo: "fruta",   temporada: "invierno",  color: "naranja",  imagen: "naranja.jpg"},
+    {id: "naranja",   nombre: "Naranja",   tipo: "Fruta",   temporada: "invierno",  color: "naranja",  imagen: "naranja.jpg"},
 
-    {id: "pimiento",  nombre: "Pimiento",  tipo: "verdura", temporada: "verano",    color: ["rojo", "verde", "amarillo", "naranja"], imagen: "pimiento.jpg"},
+    {id: "pimiento",  nombre: "Pimiento",  tipo: "Verdura", temporada: "verano",    color: ["rojo", "verde", "amarillo", "naranja"], imagen: "pimiento.jpg"},
 
-    {id: "sandia",    nombre: "Sandía",    tipo: "fruta",   temporada: "verano",    color: ["rojo", "verde"],    imagen: "sandia.jpg"},
+    {id: "sandia",    nombre: "Sandía",    tipo: "Fruta",   temporada: "verano",    color: ["rojo", "verde"],    imagen: "sandia.jpg"},
 
-    {id: "tomate",    nombre: "Tomate",    tipo: "verdura", temporada: "verano",    color: "rojo",     imagen: "tomate.jpg"},
+    {id: "tomate",    nombre: "Tomate",    tipo: "Verdura", temporada: "verano",    color: "rojo",     imagen: "tomate.jpg"},
 
-    {id: "uva",       nombre: "Uva",       tipo: "fruta",   temporada: "otono",     color: ["morado", "verde"],   imagen: "uva.jpg"}
+    {id: "uva",       nombre: "Uva",       tipo: "Fruta",   temporada: "otoño",     color: ["morado", "verde"],   imagen: "uva.jpg"}
 
 ];

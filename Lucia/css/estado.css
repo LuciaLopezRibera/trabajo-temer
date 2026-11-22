@@ -41,7 +41,7 @@ body.estado-rojo footer {background-color: #d9534f;}
 
 /* Apartado donde se muestra el estado general del huerto*/
 .muestra{
-    display: flex;
+    display: flex; /* Colocar el semáfoto y los textos en fila y centrados en vertical */
     align-items: center;
     gap: 30px; /* Separación de 30 px entre los hijos del contenedor */
     color: white;
@@ -72,9 +72,8 @@ body.estado-rojo footer {background-color: #d9534f;}
     width: 90px;
     height: 90px;
     flex-shrink: 0; /* nos dice cuánto puede encogerse el elemento dentro del contenedor si falta espacio, pero no queremos que se encoja, osea que ponemos 0 */
-    border-radius: 50%;
+    border-radius: 50%; /* para convertir la forma en círculo */
     background-color: white;
-    border: 6px solid rgba(255, 255, 255, 0.6);
     text-align: center;
     font-size: 3em;
     font-weight: bold; /* negrita */
@@ -92,22 +91,21 @@ body.estado-rojo .luz-estado {color: #d9534f;}
 
 /* Zona del panel de sensores */
 .sensores{
-    display: flex;
+    display: flex; /* colocar las tarjetas en fila */
     flex-wrap: wrap; /* Para permitir que los elementos salten a una nueva línea si no caben*/
-    gap: 20px;
+    gap: 20px; /* separación entre las tarjetas */
     margin-top: 16px;
 }
 
 .sensor{
     /* Tres tarjetas por fila si hay sitio */
-    flex-grow: 1; /* Puede crecer. Si sobra espacio en la fila se expande para que no queden heucos vacíos */
-    flex-shrink: 1; /* Puede encogerse. Si falta espacia el elemento se encoge para caber */
+    flex-grow: 1; /* Puede crecer. Si sobra espacio en la fila se expande para que no queden huecos vacíos */
+    flex-shrink: 1; /* Puede encogerse. Si falta espacio el elemento se encoge para caber */
     flex-basis: 30%; /* Tamaño inicial (respecto al contenedor) */
-    min-width: 200px;
-    background-color: rgb(238, 251, 145);
+    min-width: 200px; /* para que no se queden muy estrechas, un mínimo */
     border-width: 3px;
     border-style: solid;
-    border-radius: 16px;
+    border-radius: 16px; /* redondear el borde */
     padding-top: 16px;
     padding-bottom: 16px;
     padding-left: 20px;
@@ -122,7 +120,7 @@ body.estado-rojo .luz-estado {color: #d9534f;}
 }
 
 .sensor h3 {
-    display: flex;
+    display: flex; /* para poner el icono y el nombre en la fila centrado */
     align-items: center;
     gap: 10px;
     margin-bottom: 8px;
@@ -136,27 +134,28 @@ body.estado-rojo .luz-estado {color: #d9534f;}
 
 .sensor .valor{
     font-size: 2.2em;
-    font-weight: bold; 
+    font-weight: bold; /* negrita */
     margin-bottom: 10px;
     color: #2b3a30;
 }
 
 .sensor .unidad {
     font-size: 0.45em;
-    color: #5b6b5b;
+    color: #2b3a30;
 }
 
 /* Barra de progreso. Con el js se va cambiando la forma de dentro */ 
+/* la barra se hace como un hueco gris en la tarjeta con los bordes redondeados */
 .barra{ /* Exterior de la barra */
     background-color: #e8e8e8;
     border-radius: 10px;
     height: 10px;
-    overflow: hidden; /* Lo sobrante se corta para que no desborde */
+    overflow: hidden; /* Lo sobrante se corta para que no desborde, para que el relleno no se coma las esquinas redondeadas */
 }
 
 .barra div{ /* Interior de la barra (lo que se cambia con el js) */
     height: 100%;
-    width: 0; /* Empieza vacía */
+    width: 0; /* Empieza vacía y el js cambia el ancho */
     border-radius: 10px;
     transition: width 1s, background-color 1s;
 }
@@ -169,8 +168,7 @@ body.estado-rojo .luz-estado {color: #d9534f;}
 }
 
 .avisos li{
-    background-color: white;
-    border-left-width: 8px;
+    border-left-width: 8px; /* borde izquierdo grueso */
     border-left-style: solid;
     border-radius: 10px;
     padding-top: 12px;

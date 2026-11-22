@@ -5,41 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>miHuertapp - Estado del huerto</title>
     <link rel="stylesheet" href="../../estilos.css">
-    <link rel="stylesheet" href="../css/estado.css">
+    <link rel="stylesheet" href="../css/estado.css"> <!-- Poner después del compartido para que las reglas se puedan sobreescribir -->
     <link rel="icon" href="../../img/logo_icono.jpg" type="image/jpeg">
 </head>
 <body>
-    <nav> <!-- Zona de navegación para el cliente (lateral) -->
+    <nav> <!-- Zona de navegación para el cliente (lateral izquierda) -->
         <a href="estado.html" class="activa">Estado</a>  <!-- class activa para marcar que es en la que está el usuario -->
         <a href="camaras.html">Cámaras</a> <!-- Enlace a la sección de videovigilancia -->
+        <a href ="../../Elsa/html/frutas.html">Frutas</a> <!-- Enlace a la sección de frutas -->
         <a href="../../Belen/html/miPortal.html">Cerrar sesión</a> <!-- Enlace para volver a la zona de inicio de sesión -->
     </nav>
 
-    <div class="contenido"> 
+    <div class="contenido"> <!-- contenido se coloca a la derecha del menú -->
         <header> <!-- Cabecera común de la página -->
-            <img src="../../img/logo_icono.jpg" alt="">
+            <img src="../../img/logo_icono.jpg" alt=""> <!-- con alt="" se indica que es decorativa -->
             <h1><img src="../../img/logo_texto.jpg" alt="miHuertapp"></h1>
         </header>
 
         <main>  
-            <section class="muestra"> <!-- Estado del huerto -->
+            <section class="muestra"> <!-- Tarjeta que muestra el estado del huerto -->
                 <div id="luz" class="luz-estado"></div> <!-- Semáforo que irá cambiando con el js -->
-                <div> <!-- Elementos que se dejan vacíos para rellenarlos con el js -->
-                    <h2 id = "titulo-estado"></h2>
-                    <p id = "mensaje-estado"></p>
-                    <p class="comprobacion">Comprobado al entrar a las <span id="hora-entrada"></span></p>
+                <div> <!-- Elementos que se dejan vacíos para rellenarlos con el js según el estado del huerto -->
+                    <h2 id = "titulo-estado"></h2> <!-- Dirá si se requiere atención o no -->
+                    <p id = "mensaje-estado"></p> <!-- Desarrollará el estado del huerto -->
+                    <p class="comprobacion">Comprobado al entrar a las <span id="hora-entrada"></span></p> <!-- Hora a la que se muestra la comprobación -->
                 </div>
             </section>
 
             <section> <!-- Sensores -->
                 <h2>Panel de sensores</h2>
-                <p class="comprobacion">Última actualización: <span id="hora-actualizacion"></span></p>
+                <p class="comprobacion">Última actualización: <span id="hora-actualizacion"></span></p> <!-- span para no añadir saltos de línea ni significado semántico -->
                 <div id="sensores" class="sensores"></div> <!-- Se deja vacío también porque se rellena con el js -->
             </section>
 
             <section> <!-- Avisos -->
                 <h2>Avisos</h2>
-                <ul id="avisos" class="avisos"></ul> <!-- ul es lista desordenada -->
+                <ul id="avisos" class="avisos"></ul> <!-- ul es lista desordenada que se irá rellenando con el js -->
             </section>
         </main>
 
@@ -53,6 +54,7 @@
     </div>
 
     <script src="../js/estado.js"></script>
+    <!-- Va al final para que cuando se ejecuta, los elementos con id ya existan. Si no, getElementById no los encontraría. -->
     
 </body>
 </html>

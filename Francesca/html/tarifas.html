@@ -54,10 +54,12 @@
                     Si quieres saber más sobre nuestros equipos, visita nuestra página de <a href="servicios.html">Servicios</a>.
                 </div>
             </section>
-            <section class="texto">
-                <h2 id="planessuscripcion">Oferta de planes de suscripción</h2>
-                Para adaptarse a las necesidades de los usuarios, miHuertapp ofrece tres planes de suscripción entre los que escoger según el nivel de cobertura necesario. 
-                Puedes ver qué incluye cada plan pulsando sobre él.
+            <section>
+                <div class="texto">
+                    <h2 id="planessuscripcion">Oferta de planes de suscripción</h2>
+                    Para adaptarse a las necesidades de los usuarios, miHuertapp ofrece tres planes de suscripción entre los que escoger según el nivel de cobertura necesario. 
+                    Puedes ver qué incluye cada plan pulsando sobre él.
+                </div>
             </section>
             <section class="tarifas">
                 
@@ -97,29 +99,34 @@
                 </div>
             </section>
             <section>
-                <h2 id="comparar" onclick="desplegarTabla()">
-                    Comparación de planes de suscripción
-                    <span id="triangulo">&#x2228;</span>
-                </h2>
-                <div id="contenedorTabla">
-                    <table id="tablacomparar">
-                        <thead>
-                            <tr> <th>Servicio incluido</th> <th class="centrado">Básico</th> <th class="centrado">Plus</th> <th class="centrado">Premium</th> </tr>
-                        </thead>
-                        <tr> <td>Instalación de equipos *</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> </tr>
-                        <tr> <td>Acceso a la aplicación</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
-                        <tr> <td>Mantenimiento del sistema y de la aplicación</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
-                        <tr> <td>Almacenamiento y procesado de datos en la nube</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
-                        <tr> <td>Soporte técnico</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
-                        <tr> <td>Sustitución de equipos por rotura o avería **</td> <td class="marcador"> &cross; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
-                        <tr> <td>Sustitución de equipos por fenómenos metereológicos adversos *</td> <td class="marcador"> &cross; </td> <td class="marcador"> &cross; </td> <td class="marcador"> &check; </td></tr>
-                    </table>
-                    <p class="condiciones"> 
-                        * La instalación no incluye la adquisición de los equipos. <br>
-                        ** Los daños ocasionados por un uso indebido de los elementos del sistema o por vandalismo quedan excluidos de la cobertura de la suscripción.
-                    </p>
-                    
+                <h2> Comparación de planes de suscripción </h2>
+                <div class="periodo">
+                    <button id="botonmensual" onclick="mostrarPrecios('mensual')">Mensual</button>
+                    <button id="botonanual" onclick="mostrarPrecios('anual')">Anual</button>
                 </div>
+                <table id="tablacomparar">
+                    <thead>
+                        <tr> <th>Servicio incluido</th> <th class="centrado">Básico</th> <th class="centrado">Plus</th> <th class="centrado">Premium</th> </tr>
+                    </thead>
+                    <tr> <td>Instalación de equipos *</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> </tr>
+                    <tr> <td>Acceso a la aplicación</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
+                    <tr> <td>Mantenimiento del sistema y de la aplicación</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
+                    <tr> <td>Almacenamiento y procesado de datos en la nube</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
+                    <tr> <td>Soporte técnico</td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
+                    <tr> <td>Sustitución de equipos por rotura o avería **</td> <td class="marcador"> &cross; </td> <td class="marcador"> &check; </td> <td class="marcador"> &check; </td></tr>
+                    <tr> <td>Sustitución de equipos por fenómenos metereológicos adversos *</td> <td class="marcador"> &cross; </td> <td class="marcador"> &cross; </td> <td class="marcador"> &check; </td></tr>
+                    <tr>
+                        <td>Precio</td>
+                        <td class="precio" data-mensual="10 €/mes" data-anual="96 €/año">10 €/mes</td>
+                        <td class="precio" data-mensual="15 €/mes" data-anual="144 €/año">15 €/mes</td>
+                        <td class="precio" data-mensual="30 €/mes" data-anual="288 €/año">30 €/mes</td>
+                    </tr>
+                </table>
+                <p class="condiciones"> 
+                    * La instalación no incluye la adquisición de los equipos. <br>
+                    ** Los daños ocasionados por un uso indebido de los elementos del sistema o por vandalismo quedan excluidos de la cobertura de la suscripción.
+                </p>
+                
             </section> 
             <section>
                 <h2>

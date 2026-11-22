@@ -22,6 +22,11 @@ button:hover {
   background-color: #9cc488;       
   color: #ffffff;
 }
+.periodo{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
 
 /* ---------- Tablas ---------- */
 table {
@@ -68,21 +73,26 @@ th:first-child{
 th:nth-child(2), th:nth-child(3), th:nth-child(4){
   width: 20%;
 }
-
+.precio{
+  display: center;
+  text-align: center;
+  color:  #2e5e46;
+  font-weight: 700;
+}
+#filaahorro .centrado{
+  color:  #2e5e46;
+  font-weight: 700;
+}
 
 
 /* -------------------- */
-
+#planessuscripcion{
+  margin-top: 20px;
+}
 .condiciones{
   font-style: italic;
   font-size: small;
   padding-top: 6px;
-}
-#contenedorTabla{
-  display: none; /*Tabla oculta al principio*/
-}
-#comparar{
-    cursor: pointer; /*para que al pasar por encima cambie a una mano y sepa que lo puedo pulsar*/
 }
 .texto{
   margin-top: 20px;

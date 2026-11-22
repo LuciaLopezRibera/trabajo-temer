@@ -14,19 +14,50 @@ function seleccionarPlan(nombre){
         }
     }
 }
-
-
-function desplegarTabla(){
-    const tabla = document.getElementById("contenedorTabla");
-    const triangulo = document.getElementById("triangulo");
-    if (tabla.style.display === "block"){
-        tabla.style.display = "none";
-        triangulo.innerHTML = "&#x2228;"; 
-    }else{
-        tabla.style.display = "block";
-        triangulo.innerHTML = "	&#x2227;";
+function ponerahorro(precios) {
+    if (document.getElementById("filaahorro") !== null){ //ya la he creado
+        return;
+    }
+    const fila = document.createElement("tr"); //creo una fila
+    fila.id = "filaahorro";
+    let texto = "<td>Ahorro frente al plan mensual</td>"
+    for (let i = 0; i< precios.length; i++){
+        const mensual =  parseInt(precios[i].dataset.mensual);
+        const ahorro = mensual*12*0.2;
+        texto += '<td class="centrado">' + ahorro + " €/año</td>";   
+    }
+    fila.innerHTML = texto;
+    document.querySelector("#tablacomparar tbody").appendChild(fila);
+}
+function quitarahorro() {
+    const fila = document.getElementById("filaahorro");
+    if (fila !== null) {
+        document.querySelector("#tablacomparar tbody").removeChild(fila);
     }
 }
+function mostrarPrecios(periodo) {
+    const precios = document.querySelectorAll(".precio"); //busco todos los elementos de la clase precio
+    const botonmensual = document.getElementById("botonmensual");
+    const botonanual = document.getElementById("botonanual");
+    for (let i = 0; i < precios.length; i++){
+        precios[i].innerHTML = precios[i].dataset[periodo];
+    }
+    if (periodo === "mensual"){
+        botonmensual.style.backgroundColor = "#9cc488";
+        botonmensual.style.color = "#ffffff";
+        botonanual.style.backgroundColor = "";
+        botonanual.style.color = "";
+        quitarahorro();
+    }else{
+        botonanual.style.backgroundColor = "#9cc488";
+        botonanual.style.color = "#ffffff";
+        botonmensual.style.backgroundColor = "";
+        botonmensual.style.color = "";
+        ponerahorro(precios);
+    }
+    
+}
+mostrarPrecios("mensual");
 function desplegar(numero){
     const respuesta = "r" + numero;
     const triangulo = "t" + numero;
@@ -40,7 +71,3 @@ function desplegar(numero){
         t.innerHTML = "	&#x2227;";
     }
 }
-
-//function filaIgual(){}
-
-//function interfazTabla(){}

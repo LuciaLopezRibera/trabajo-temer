@@ -1,0 +1,53 @@
+/*Hoja estilos servicios. Responsable: Francesca González Marcet*/
+
+
+/* ---------- Botones ---------- */
+.boton,
+button {
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  color: #2e5e46;
+  background-color: #d6ebc8;          
+  border: 2px solid #9cc488;
+  border-radius: 20px;
+  padding: 10px 24px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.boton:hover,
+button:hover {
+  background-color: #9cc488;       
+  color: #ffffff;
+}
+
+
+/*---------*/
+.texto{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.equipos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.tarjeta {
+  width: 30%;
+  background-color: #ffffff;
+  border: 2px solid #bfe0c4;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.tarjeta img {
+  height: 250px;
+  max-width: 100%;
+}

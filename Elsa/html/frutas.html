@@ -7,6 +7,7 @@
   <link rel="icon" href="../../img/logo_icono.jpg" type="image/jpeg">
   <link rel="stylesheet" href="../../estilos.css">
   <link rel="stylesheet" href="../css/frutas.css">
+  <link rel="stylesheet" href="../../Lucia/css/aviso.css">
 </head>
 <body>
 
@@ -15,13 +16,14 @@
     <a href="../../Lucia/html/estado.html">Estado</a>
     <a href="../../Lucia/html/camaras.html">Cámaras</a>
     <a href="frutas.html" class="activa">Cultivos</a>
-    <a href="../../Belen/html/miPortal.html">Cerrar sesión</a>
+    <a href="../../Belen/html/miPortal.html" id="cerrar-sesion">Cerrar sesión</a>
   </nav>
 
   <div class="contenido">
     <header>
       <img src="../../img/logo_icono.jpg" alt="">
       <h1><img src="../../img/logo_texto.jpg" alt="miHuertapp"></h1>
+      <p id="hola" class="saludo"></p>
     </header>
 
     <main>
@@ -78,6 +80,18 @@
       <p>Correo: <a href="mailto:info@mihuertapp.com">info@mihuertapp.com</a></p>
       <p>Atención al cliente: lunes a viernes, de 9:00 a 19:00</p>
     </footer>
+  </div>
+
+    <!-- Aviso de cerrar sesion (cuando se pulsa el boton, pregunta si estas seguro) -->
+  <div id="aviso-cerrar" class="aviso-fondo">
+    <div class="aviso-caja">
+      <h2>Cerrar sesión</h2>
+      <p>¿Seguro que quieres cerrar sesión?</p>
+      <div class="aviso-botones">
+        <a href="../../Belen/html/miPortal.html" class="aviso-si">Sí, cerrar sesión</a>
+        <button id="aviso-no">No, volver</button>
+      </div>
+    </div>
   </div>
 
   <script src="../js/cultivos.js"></script>

@@ -1,5 +1,8 @@
 // JavaScript de la página frutas - Responsable: Elsa Blasco Novell
 
+// Saludo de arriba del todo
+let nombre = localStorage.getItem("nombre_usuario");
+document.getElementById("hola").textContent = "Hola, " + nombre;
 
 function mostrarCultivos() {
     // PASO 1: Leer lo que hay en cada desplegable 
@@ -104,3 +107,23 @@ function guardarCultivo(id) {
 }
 
 mostrarCultivos();
+
+
+
+
+// Aviso al cerrar sesion 
+
+const enlaceCerrar = document.getElementById("cerrar-sesion");
+const aviso = document.getElementById("aviso-cerrar");
+const botonNo = document.getElementById("aviso-no");
+
+// Al pulsar cerrar sesion no se va al login, se enseña el aviso
+enlaceCerrar.addEventListener("click", function (e) {
+    e.preventDefault();          // anula lo que haria el enlace (ir al login)
+    aviso.style.display = "flex";
+});
+
+// Al pulsar no se esconde el aviso y te quedas donde estas
+botonNo.addEventListener("click", function () {
+    aviso.style.display = "none";
+});

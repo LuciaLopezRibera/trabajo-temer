@@ -162,3 +162,26 @@ aplicarEstado();
 crearTarjetas();
 mostrarValores(); 
 setInterval(tiempo, 10000);
+
+
+// Aviso al cerrar sesión 
+
+const enlaceCerrar = document.getElementById("cerrar-sesion");
+const aviso = document.getElementById("aviso-cerrar");
+const botonNo = document.getElementById("aviso-no");
+
+// Al pulsar cerrar sesión no se va al login, se enseña el aviso
+enlaceCerrar.addEventListener("click", function (e){
+    e.preventDefault(); // anula lo que haría el enlace por defecto (ir al login)
+    aviso.style.display = "flex";
+ 
+});
+
+// Al pulsar no se esconde el aviso y te quedas donde estás
+botonNo.addEventListener("click", function(){
+    aviso.style.display = "none";
+})
+
+// Para que salga el nombre del usuario arriba
+let nombre = localStorage.getItem("nombre_usuario");
+document.getElementById("hola").textContent = "Hola, " + nombre;

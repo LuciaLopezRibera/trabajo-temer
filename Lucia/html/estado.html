@@ -6,14 +6,15 @@
     <title>miHuertapp - Estado del huerto</title>
     <link rel="stylesheet" href="../../estilos.css">
     <link rel="stylesheet" href="../css/estado.css"> <!-- Poner después del compartido para que las reglas se puedan sobreescribir -->
+    <link rel="stylesheet" href="../css/aviso.css">
     <link rel="icon" href="../../img/logo_icono.jpg" type="image/jpeg">
 </head>
 <body>
     <nav class = "portal"> <!-- Zona de navegación para el cliente (lateral izquierda) -->
         <a href="estado.html" class="activa">Estado</a>  <!-- class activa para marcar que es en la que está el usuario -->
         <a href="camaras.html">Cámaras</a> <!-- Enlace a la sección de videovigilancia -->
-        <a href ="../../Elsa/html/frutas.html">Cultivoss</a> <!-- Enlace a la sección de frutas -->
-        <a href="../../Belen/html/miPortal.html">Cerrar sesión</a> <!-- Enlace para volver a la zona de inicio de sesión -->
+        <a href ="../../Elsa/html/frutas.html">Cultivos</a> <!-- Enlace a la sección de frutas -->
+        <a href="../../Belen/html/miPortal.html" id = "cerrar-sesion">Cerrar sesión</a> <!-- Enlace para volver a la zona de inicio de sesión -->
     </nav>
 
     <div class="contenido"> <!-- contenido se coloca a la derecha del menú -->
@@ -23,6 +24,7 @@
         </header>
 
         <main>  
+            <p id="hola" class ="saludo"></p>
             <section class="muestra"> <!-- Tarjeta que muestra el estado del huerto -->
                 <div id="luz" class="luz-estado"></div> <!-- Semáforo que irá cambiando con el js -->
                 <div> <!-- Elementos que se dejan vacíos para rellenarlos con el js según el estado del huerto -->
@@ -52,6 +54,18 @@
         </footer>
 
     </div>
+
+    <!-- Aviso de cerrar sesión (cuando se pulsa el botón preguntar si estás seguro) -->
+    <div id="aviso-cerrar" class="aviso-fondo">
+        <div class="aviso-caja">
+            <h2> Cerrar sesión </h2>
+            <p> ¿Seguro que quieres cerrar sesión? </p>
+            <div class = "aviso-botones">
+                <a href = "../../Belen/html/miPortal.html" class = "aviso-si"> Sí, cerrar sesión </a>
+                <button id = "aviso-no"> No, volver </button>
+            </div>
+        </div>
+    </div>       
 
     <script src="../js/estado.js"></script>
     <!-- Va al final para que cuando se ejecuta, los elementos con id ya existan. Si no, getElementById no los encontraría. -->

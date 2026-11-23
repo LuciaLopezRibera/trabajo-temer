@@ -50,4 +50,13 @@
     color: #2b3a30;
 }
 
-.aviso-si:hover, #aviso-no:hover {transform: scale(1.05);}
+.aviso-si:hover{
+    transform: scale(1.05);
+    color:white;
+}
+
+#aviso-no:hover {
+    transform: scale(1.05);
+    color: #2b3a30;
+
+}

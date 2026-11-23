@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>miHuertapp - Vigilancia en directo</title>
+    <link rel="stylesheet" href="../../estilos.css">
+    <link rel="stylesheet" href="../css/camaras.css"> <!-- Poner después del compartido para que las reglas se puedan sobreescribir -->
+    <link rel="stylesheet" href="../css/aviso.css">
+    <link rel="icon" href="../../img/logo_icono.jpg" type="image/jpeg">
+</head>
+<body>
+    <nav class = "portal"> <!-- Zona de navegación para el cliente (lateral izquierda) -->
+        <a href="estado.html">Estado</a>  <!-- class activa para marcar que es en la que está el usuario -->
+        <a href="camaras.html" class="activa">Cámaras</a> <!-- Enlace a la sección de videovigilancia -->
+        <a href ="../../Elsa/html/frutas.html">Cultivos</a> <!-- Enlace a la sección de frutas -->
+        <a href="../../Belen/html/miPortal.html" id = "cerrar-sesion">Cerrar sesión</a> <!-- Enlace para volver a la zona de inicio de sesión -->
+    </nav>
+
+    <div class="contenido"> <!-- contenido se coloca a la derecha del menú -->
+        <header> <!-- Cabecera común de la página -->
+            <img src="../../img/logo_icono.jpg" alt=""> <!-- con alt="" se indica que es decorativa -->
+            <h1><img src="../../img/logo_texto.jpg" alt="miHuertapp"></h1>
+        </header>
+
+        <main>  
+            <p id="hola" class ="saludo"></p>
+>
+        </main>
+
+        <footer> <!-- Pie de página -->
+            <p>&copy; 2026 miHuertapp. Todos los derechos reservados.</p>
+            <p>Contacto: <a href = "tel:+34642342442">+34 642 342 442</a></p>
+            <p>Correo: <a href="mailto:info@mihuertapp.com">info@mihuertapp.com</a></p>
+            <p>Atención al cliente: lunes a viernes, de 9:00 a 19:00</p>
+        </footer>
+
+    </div>
+
+    <!-- Aviso de cerrar sesión (cuando se pulsa el botón preguntar si estás seguro) -->
+    <div id="aviso-cerrar" class="aviso-fondo">
+        <div class="aviso-caja">
+            <h2> Cerrar sesión </h2>
+            <p> ¿Seguro que quieres cerrar sesión? </p>
+            <div class = "aviso-botones">
+                <a href = "../../Belen/html/miPortal.html" class = "aviso-si"> Sí, cerrar sesión </a>
+                <button id = "aviso-no"> No, volver </button>
+            </div>
+        </div>
+    </div>       
+
+    <script src="../js/estado.js"></script>
+    <!-- Va al final para que cuando se ejecuta, los elementos con id ya existan. Si no, getElementById no los encontraría. -->
+    
+</body>
+</html>

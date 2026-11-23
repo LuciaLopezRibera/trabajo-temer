@@ -11,8 +11,8 @@
 </head>
 <body>
     <nav class = "portal"> <!-- Zona de navegación para el cliente (lateral izquierda) -->
-        <a href="estado.html">Estado</a>  <!-- class activa para marcar que es en la que está el usuario -->
-        <a href="camaras.html" class="activa">Cámaras</a> <!-- Enlace a la sección de videovigilancia -->
+        <a href="estado.html">Estado</a> <!-- Enlace a la sección de estado del huerto --> 
+        <a href="camaras.html" class="activa">Cámaras</a> <!-- class activa para marcar que es en la que está el usuario -->
         <a href ="../../Elsa/html/frutas.html">Cultivos</a> <!-- Enlace a la sección de frutas -->
         <a href="../../Belen/html/miPortal.html" id = "cerrar-sesion">Cerrar sesión</a> <!-- Enlace para volver a la zona de inicio de sesión -->
     </nav>
@@ -21,11 +21,35 @@
         <header> <!-- Cabecera común de la página -->
             <img src="../../img/logo_icono.jpg" alt=""> <!-- con alt="" se indica que es decorativa -->
             <h1><img src="../../img/logo_texto.jpg" alt="miHuertapp"></h1>
+            <p id="hola" class ="saludo"></p>
         </header>
 
         <main>  
-            <p id="hola" class ="saludo"></p>
->
+            <h2>Cámaras en directo</h2>
+            <p>Arrastra una cámara a la zona de visualización para ver su vídeo.</p>
+            <!-- Cámaras 1, 2, y 3: elementos que se arrastran -->
+            <section class = "camaras">
+                <div class = "camara" id = "camara-manzanas" data-fruta = "manzanas" draggable = "true">
+                    <!-- se pone draggable false para que se arrastre el div entero y no solo la imagen -->
+                    <img src = "../img/camara_manzanas.svg" alt = "" draggable = "false"> 
+                    <p> Cámara 1 <br> Manzanas </p>
+                </div>
+                <div class = "camara" id = "camara-fresas" data-fruta = "fresas" draggable = "true">
+                    <!-- se pone draggable false para que se arrastre el div entero y no solo la imagen -->
+                    <img src = "../img/camara_fresas.svg" alt = "" draggable = "false"> 
+                    <p> Cámara 2 <br> Fresas </p>
+                </div>
+                <div class = "camara" id = "camara-tomates" data-fruta = "tomates" draggable = "true">
+                    <!-- se pone draggable false para que se arrastre el div entero y no solo la imagen -->
+                    <img src = "../img/camara_tomates.svg" alt = "" draggable = "false"> 
+                    <p> Cámara 3 <br> Tomates </p>
+                </div>
+            </section>
+
+            <!-- Zona donde se suelta la cámara. Al principio está vacía -->
+             <section id = "zona" class = "zona">
+                <p> Zona de visualización vacía. Arrastra y suelta aquí una cámara. </p>
+             </section>
         </main>
 
         <footer> <!-- Pie de página -->
@@ -49,7 +73,7 @@
         </div>
     </div>       
 
-    <script src="../js/estado.js"></script>
+    <script src="../js/camaras.js"></script>
     <!-- Va al final para que cuando se ejecuta, los elementos con id ya existan. Si no, getElementById no los encontraría. -->
     
 </body>

@@ -1,4 +1,4 @@
-//JavaScript de tarifas. Responsable: Francesca
+//JavaScript de tarifas. Responsable: Francesca González Marcet
 function seleccionarPlan(nombre){
     const planes = ["basico", "plus", "premium"];
     

@@ -21,7 +21,7 @@ camaras.addEventListener("input", function(){
 });
 
 
-// PARA QUE SI HAY ALGÚN CAMPO DEL FORMULARIO VACIO SALTE UNA ALERTA
+// PARA QUE SI HAY ALGÚN CAMPO DEL FORMULARIO VACIO SALTE UNA ALERTA + revisar que el formato de telefono y codigo postal sea correcto
 
 const formulario = document.getElementById("formulario");
 const obligatorio = ["nombre", "apellidos", "telefono", "correo", "direccion", "codpost", "usuario", "contrasena"];
@@ -60,14 +60,64 @@ formulario.addEventListener("submit", function(evento){
         fact.style.color = "black";
     }
 
-    // si falta algun campo por rellenar salta una alerta
+    // REVISAR FORMATO DE LOS CAMPOS (telefono y codigo postal)
+    let errores="";
+
+    // telefono (tiene que tener 9 numeros)
+    let telefono = document.getElementById("telefono");
+    let tel_valido=1;
+    if(telefono.value!=""){// que solo compruebe si el telefono esta relleno
+        for (let i = 0; i < telefono.value.length; i++) {
+            if (isNaN(telefono.value[i]) || telefono.value[i] === " ") { // con isNan compruebo si cada caracter es un numero
+            tel_valido=0;
+            }
+        }
+        if (telefono.value.length != 9) { // compruebo que tenga 9 dígitos
+            tel_valido = 0;
+        }
+        if(tel_valido==0){
+            telefono.style.borderColor = "red"; // si no esta relleno pongo el borde de color rojo
+            telefono.style.backgroundColor = "#ffdfce";
+            errores=errores+ "- El teléfono deber estar compuesto por 9 números.\n"
+        }
+        }
+
+    // codigo postal (tiene que tener 5 numeros)
+    let cod_post = document.getElementById("codpost");
+    let cod_valido=1;
+    if (cod_post.value!=""){
+        for (let i = 0; i < cod_post.value.length; i++) {
+            if (isNaN(cod_post.value[i])|| cod_post.value[i] === " ") {
+            cod_valido=0;
+            }
+        }
+        if (cod_post.value.length != 5) {
+            cod_valido = 0;
+        }
+        if(cod_valido==0){
+            cod_post.style.borderColor = "red"; // si no esta relleno pongo el borde de color rojo
+            cod_post.style.backgroundColor = "#ffdfce";
+            errores=errores+ "- El código postal deber estar compuesto por 5 números.\n"
+        }
+    }
+
+    // ALERTA SI FALTA ALGUN CAMPO POR RELLENAR O EL FORMATO DE TELEFONO O CODIGO POSTAL ESTA MAL
+    let mensaje = "";
     if (relleno == 0) {
-        evento.preventDefault();      // nos quedamos en esta página
-        alert("¡Error! Falta algún campo por rellenar.");
+        mensaje = mensaje + "- Falta algún campo por rellenar.\n";
+    }
+    if (errores !== "") {
+        mensaje = mensaje + errores;
+    }
+
+    if (mensaje !== "") {
+        evento.preventDefault(); // nos quedamos en esta página
+        alert("¡Error! Revisa lo siguiente:\n" + mensaje);
     }else{
         // me almaceno el usuario y cotrasena introducido para poder entrar en miPortal
         localStorage.setItem("usuario_nuevo", document.getElementById("usuario").value);
         localStorage.setItem("contrasena_nueva", document.getElementById("contrasena").value)
+        localStorage.setItem("nombre_nuevo", document.getElementById("nombre").value)
     }
 });
 

@@ -2,14 +2,18 @@
 
 let base_usuarios=["prueba", "elsa", "francesca", "lucia", "belen"];
 let base_contrasenas=["prueba", "cont_elsa", "cont_francesca", "cont_lucia", "cont_belen"];
+let base_nombres=["Prueba", "Elsa", "Francesca", "Lucía", "Belén"]
 const formulario = document.getElementById("formulario_inicio");
+let nombre_usuario="";
 
 // me añado a la base el usuario y contrasena de contratar
 let usuario_nuevo = localStorage.getItem("usuario_nuevo");
 let contrasena_nueva = localStorage.getItem("contrasena_nueva");
+let nombre_nuevo = localStorage.getItem("nombre_nuevo");
 if (usuario_nuevo !== null) {
     base_usuarios.push(usuario_nuevo);
     base_contrasenas.push(contrasena_nueva);
+    base_nombres.push(nombre_nuevo);
 }
 
 formulario.addEventListener("submit", function(evento){
@@ -22,6 +26,7 @@ formulario.addEventListener("submit", function(evento){
         if (base_usuarios[i]===usuario.value){ // compruebo si el usario y contraseña coincide con los almacenados
             if (base_contrasenas[i]===contrasena.value){ // importante que tengan el mismo indice i para que sea la misma pareja usuario/contraseña
                 validacion=1;
+                nombre_usuario = base_nombres[i]; // nos quedamos con el nombre de usuario
             }
         }
     }
@@ -30,5 +35,7 @@ formulario.addEventListener("submit", function(evento){
     if (validacion==0){
         evento.preventDefault();
         alert("Usuario o contraseña incorrectos.");
+    }else{
+        localStorage.setItem("nombre_usuario", nombre_usuario); // me guardo el nombre en una variable local para luego mostrarlo en el resto de paginas
     }
 });

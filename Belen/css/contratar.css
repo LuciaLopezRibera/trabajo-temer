@@ -3,10 +3,10 @@ fieldset {
   border-style: solid;
   border-color:  #2e5e46;
   border-radius: 20px;
-  padding-top: 15px;
+  padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
   margin-bottom: 30px;
   background-color: #f9fdf8;
 }
@@ -14,7 +14,7 @@ fieldset {
 .datosPersonales{
   box-sizing: border-box;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -25,11 +25,11 @@ legend{
 }
 
 .izq{
-  width: calc(100% / 2 - 15px);
+  width: calc(100% / 2 - 30px);
 }
 
 .der{
-  width: calc(100% / 2 - 15px);
+  width: calc(100% / 2 - 30px);
 }
 
 input[type="text"], input[type="tel"], input[type="email"], input[type="password"], textarea{
@@ -39,8 +39,8 @@ input[type="text"], input[type="tel"], input[type="email"], input[type="password
   border-radius: 5px;
   padding: 8px;
   margin-top: 5px;
-  margin-bottom: 10px;
-  width: calc(100% - 30px);
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 input[type="text"]:hover, input[type="tel"]:hover, input[type="email"]:hover, input[type="password"]:hover, textarea:hover{
@@ -53,7 +53,7 @@ input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, in
 
 input[type="radio"]{
   accent-color: #9dcb82;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 input[type="range"]{

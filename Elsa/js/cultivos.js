@@ -3,7 +3,9 @@
 
 // LOS CULTIVOS TENEMOS QUE PONERLOS EN ORDEN ALFABETICO PARA QUE TODO VAYA BIEN (ASI LO HE PROGRAMADO)
 // En siembra y cosecha pongo el numero del mes (1=enero, 12=diciembre)
-
+// En agua y calor pongo el nivel del indicador (1-4)
+    // agua:  1 = poca agua ---- 2 = riego regular no excesivo ---- 3 = riego abundante            ---- 4 = muy exigente en agua
+    // calor: 1 = fresco    ---- 2 = templado (15-20 ºC)       ---- 3 = templado-calido (20-30 ºC) ---- 4 = calido
 
 
 const cultivos = [
@@ -15,7 +17,12 @@ const cultivos = [
         color:"morado",    
         imagen: "berenjena.jpg",
         siembra: [3, 4], 
-        cosecha: [7, 8, 9, 10]
+        cosecha: [7, 8, 9, 10], 
+        agua: 3,
+        textoAgua: "Riego abundante y regular", 
+        calor: 4, 
+        textoCalor: "Clima cálido. Sensible a las heladas",
+        consejo: "Limita el número de frutos para que no salgan demasiado pequeños"
     },
         
 
@@ -26,7 +33,12 @@ const cultivos = [
         color: "verde",    
         imagen: "calabacin.jpg",
         siembra: [4, 5], 
-        cosecha: [7, 8, 9]
+        cosecha: [7, 8, 9],
+        agua: 3,
+        textoAgua: "Suelo húmedo y con buen drenaje", 
+        calor: 4, 
+        textoCalor: "Clima cálido. Deja de crecer por debajo de 8 ºC",
+        consejo: "Arrima tierra al pie de la planta y retira las hojas viejas de la parte baja"
     },
 
     {id: "calabaza",  
@@ -36,7 +48,12 @@ const cultivos = [
         color: "naranja",  
         imagen: "calabaza.jpg",
         siembra: [5], 
-        cosecha: [10, 11]
+        cosecha: [10, 11],
+        agua: 3,
+        textoAgua: "Riego abundante. Más moderado en otoño", 
+        calor: 4, 
+        textoCalor: "Clima cálido. No tolera el frío",
+        consejo: "Deja una sola planta por hoyo y aclara los frutos para que crezcan más"
     },
 
     {id: "cereza",    
@@ -45,9 +62,14 @@ const cultivos = [
         temporada: "primavera", 
         color: "rojo",     
         imagen: "cereza.jpg",
-        frutal: true, // al ser una fruta se plantan, no se siembran
+        frutal: true, // al ser un arbol se plantan, no se siembran
         siembra: [], 
-        cosecha: [5, 6, 7]
+        cosecha: [5, 6, 7],
+        agua: 3,
+        textoAgua: "Riego regular en primavera y verano", 
+        calor: 2, 
+        textoCalor: "Necesita frío invernal. Sensible a las heladas en floración",
+        consejo: "Poda el árbol después de la cosecha para airear la copa"
     },
 
     {id: "coliflor",  
@@ -57,37 +79,57 @@ const cultivos = [
         color: "blanco",   
         imagen: "coliflor.jpg",
         siembra: [5, 6, 7, 8, 9], 
-        cosecha: [10, 11, 12, 1, 2]
+        cosecha: [10, 11, 12, 1, 2],
+        agua: 4,
+        textoAgua: "Riego frecuente y abundante, sin encharcar", 
+        calor: 2, 
+        textoCalor: "Clima templado. Óptimo entre 15 y 20 ºC",
+        consejo: "Protege la flor del sol cubriéndola con sus propias hojas exteriores"
     },
 
     {id: "fresa",     
         nombre: "Fresa",     
         tipo: "Fruta",   
-        temporada: "primavera", 
+        temporada: "verano", 
         color: "rojo",     
         imagen: "fresa.jpg",
         siembra: [2, 3, 4], 
-        cosecha: [6, 7, 8, 9, 10]
+        cosecha: [6, 7, 8, 9, 10],
+        agua: 3,
+        textoAgua: "Suelo siempre húmedo, sin encharcar", 
+        calor: 2, 
+        textoCalor: "Clima fresco. Óptimo entre 15 y 20 ºC",
+        consejo: "Coloca paja bajo las plantas para que los frutos no toquen la tierra"
     },
 
     {id: "guisantes", 
         nombre: "Guisantes", 
         tipo: "Verdura", 
-        temporada: "primavera", 
+        temporada: "invierno", 
         color: "verde",    
         imagen: "guisantes.jpg",
         siembra: [9, 10, 11], 
-        cosecha: [12, 1, 2]
+        cosecha: [12, 1, 2],
+        agua: 1,
+        textoAgua: "Riego moderado", 
+        calor: 2, 
+        textoCalor: "Clima templado. No tolera más de 30 ºC",
+        consejo: "Coloca cañas o hilos para que la planta pueda trepar"
     },
 
     {id: "lechuga",   
         nombre: "Lechuga",   
         tipo: "Verdura", 
-        temporada: "invierno",  
+        temporada: "verano",  
         color: "verde",    
         imagen: "lechuga.jpg",
         siembra: [3, 4, 5, 6, 7, 8], 
-        cosecha: [6, 7, 8, 9, 10, 11]
+        cosecha: [6, 7, 8, 9, 10, 11],
+        agua: 4,
+        textoAgua: "Riego muy abundante, sobre todo al formar el cogollo", 
+        calor: 2, 
+        textoCalor: "Clima templado. Óptimo entre 15 y 20 ºC",
+        consejo: "Elimina las malas hierbas y airea la tierra con regularidad"
     },
 
     {id: "limon",     
@@ -98,7 +140,12 @@ const cultivos = [
         imagen: "limon.jpg",
         frutal: true, 
         siembra: [], 
-        cosecha: [10, 11, 12, 1, 2, 3, 4, 5, 6, 7]
+        cosecha: [10, 11, 12, 1, 2, 3, 4, 5, 6, 7],
+        agua: 3,
+        textoAgua: "Riego regular durante todo el año", 
+        calor: 3, 
+        textoCalor: "Clima templado-cálido. Sensible al frío",
+        consejo: "Evita encharcar el pie del árbol"
     },
 
     {id: "naranja",   
@@ -109,7 +156,12 @@ const cultivos = [
         imagen: "naranja.jpg",
         frutal: true, 
         siembra: [], 
-        cosecha: [9, 10, 11, 12, 1, 2, 3, 4, 5]
+        cosecha: [9, 10, 11, 12, 1, 2, 3, 4, 5],
+        agua: 3,
+        textoAgua: "Riego regular, mayor en verano", 
+        calor: 3, 
+        textoCalor: "Clima templado-cálido. Sensible a las heladas",
+        consejo: "Evita encharcar el pie del árbol y pódalo después de la cosecha"
     },
 
     {id: "pimiento",  
@@ -119,7 +171,12 @@ const cultivos = [
         color: ["rojo", "verde", "amarillo", "naranja"], 
         imagen: "pimiento.jpg",
         siembra: [2, 3], 
-        cosecha: [6, 7, 8, 9, 10]
+        cosecha: [6, 7, 8, 9, 10],
+        agua: 3,
+        textoAgua: "Riego abundante, mayor durante la fructificación", 
+        calor: 3, 
+        textoCalor: "Clima templado-cálido. Óptimo entre 20 y 25 ºC",
+        consejo: "Coloca cañas a los lados para que el peso de los frutos no rompa las ramas"
     },
 
     {id: "sandia",    
@@ -129,7 +186,12 @@ const cultivos = [
         color: ["rojo", "verde"],    
         imagen: "sandia.jpg",
         siembra: [3, 4, 5], 
-        cosecha: [6, 7, 8, 9]
+        cosecha: [6, 7, 8, 9],
+        agua: 2,
+        textoAgua: "Riego regular. Tolera cierta sequía", 
+        calor: 3, 
+        textoCalor: "Clima templado-cálido. Óptimo entre 20 y 30 ºC",
+        consejo: "Elimina las ramas sin flores para favorecer los frutos"
     },
 
     {id: "tomate",    
@@ -139,7 +201,12 @@ const cultivos = [
         color: "rojo",     
         imagen: "tomate.jpg",
         siembra: [4, 5, 6], 
-        cosecha: [6, 7, 8, 9, 10]
+        cosecha: [6, 7, 8, 9, 10],
+        agua: 2,
+        textoAgua: "Riego regular, sin excesos", 
+        calor: 4, 
+        textoCalor: "Clima cálido. Necesita al menos 6 horas de sol",
+        consejo: "Elimina los brotes laterales y las hojas bajas para fortalecer los frutos"
     },
 
     {id: "uva",      
@@ -150,7 +217,12 @@ const cultivos = [
         imagen: "uva.jpg", 
         frutal: true, 
         siembra: [], 
-        cosecha: [8, 9, 10, 11, 12]
+        cosecha: [8, 9, 10, 11, 12],
+        agua: 1,
+        textoAgua: "Poco riego. Resistente a la sequía", 
+        calor: 3, 
+        textoCalor: "Clima templado-cálido y soleado",
+        consejo: "Poda la parra en invierno, cuando no tiene hojas"
     }
 
 ];

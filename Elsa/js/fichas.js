@@ -51,3 +51,32 @@ if (cultivo.frutal) {
         celdasSiembra[mes-1].classList.add("siembra");
     }
 }
+
+
+
+// PASO 5: Rellenamos las necesidades
+
+// funcion que dibuja los puntitos segun el nivel (1-4) que hemos puesto en el js
+function dibujarPuntos(nivel) {
+    let puntos = ""
+    for (let i=1; i<=4; i++) {
+        if (i<=nivel) {
+            puntos += "&#9679;"; // punto lleno
+        } else {
+            puntos += "&#9675;"; // punto vacio
+        }
+    }
+    return puntos; 
+}
+
+// agua
+document.getElementById("nivel-agua").innerHTML = dibujarPuntos(cultivo.agua);
+document.getElementById("texto-agua").innerHTML = cultivo.textoAgua;
+
+// temperatura
+document.getElementById("nivel-temp").innerHTML = dibujarPuntos(cultivo.calor);
+document.getElementById("texto-temp").innerHTML = cultivo.textoCalor;
+
+
+// PASO 5: Rellenamos los consejos
+document.getElementById("texto-consejo").innerHTML = cultivo.consejo; 

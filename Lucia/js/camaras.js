@@ -46,19 +46,17 @@ function mostrarVideo(fruta){ // en fruta ponemos manzanas, fresas o tomates
     // Tomamos en qué segundo se ha soltado la cámara. Si los segundos van de 0 a 29 --> primer vídeo. Si los segundos van de 30 a 59 --> segundo vídeo. 
     const segundo = new Date().getSeconds(); 
     let num; 
+    
     if(segundo < 30){
         num = 0;
     } else {
         num = 1; 
     }
 
+    
     // Se vacía la zona y se para el reloj anterior (por si había otro vídeo antes)
-    while(zona.Child){
-        zona.removeChild(zona.firstChild);
-    } 
-    if (reloj !== null){
-        clearInterval(reloj);
-    }
+
+    zona.innerHTML = "";
 
     // "EN DIRECTO" con el nombre de la cámara y la hora
     const barra = document.createElement("div");

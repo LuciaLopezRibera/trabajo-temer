@@ -37,7 +37,8 @@
 
 /* Estilo de la zona de visualización (donde se sueltan las cámaras) */
 .zona{
-    min-height: 420px;
+    height: 520px; /* alto fijo para que la caja no crezca y el vídeo se ajuste a la caja */
+    overflow: hidden;
     display: flex;
     flex-direction: column; /* para que los elementos se coloquen uno debajo del otro */
     align-items: center; 
@@ -57,6 +58,7 @@
 
 /* Para que ponga "EN DIRECTO" encima del vídeo */
 .directo{
+    flex-shrink: 0; /* para que la barra no se encoja */
     display: flex;
     align-items: center;
     gap: 12px; 
@@ -75,11 +77,13 @@
     font-weight: normal;
 }
 
-.zona iframe{
+.zona video{
+    flex: 1; /* ocupa el espacio que queda debajo de la barra de directo */
+    min-height: 0; /* no hay restricción (si el vídeo es más grande que la caja se encoge) */
     width: 100%;
     max-width: 800px;
-    height: 420px;
+    background-color: #f4faf1; /* aparecen franjas segras si el vídeo no tiene la misma forma que la caja */
     border: none; 
-    border-radius: 12px;
+    border-radius: 12px; 
 }
 

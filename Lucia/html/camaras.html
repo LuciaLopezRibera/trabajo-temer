@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../estilos.css">
     <link rel="stylesheet" href="../css/camaras.css"> <!-- Poner después del compartido para que las reglas se puedan sobreescribir -->
     <link rel="stylesheet" href="../css/aviso.css">
-    <link rel="icon" href="../../img/logo_icono.jpg" type="image/jpeg">
+    <link rel="icon" href="../../img/logo_icono.jpg" type="image/jpeg"> <!-- Icono de la pestaña -->
 </head>
 <body>
     <nav class = "portal"> <!-- Zona de navegación para el cliente (lateral izquierda) -->
@@ -21,18 +21,20 @@
         <header> <!-- Cabecera común de la página -->
             <img src="../../img/logo_icono.jpg" alt=""> <!-- con alt="" se indica que es decorativa -->
             <h1><img src="../../img/logo_texto.jpg" alt="miHuertapp"></h1>
-            <p id="hola" class ="saludo"></p>
+            <p id="hola" class ="saludo"></p> <!-- Está vacío porque el js lo rellena con el nombre de usuario -->
         </header>
 
         <main>  
             <h2>Cámaras en directo</h2>
             <p>Arrastra una cámara a la zona de visualización para ver su vídeo.</p>
             <!-- Cámaras 1, 2, y 3: elementos que se arrastran -->
-            <section class = "camaras">
+            <section class = "camaras"> <!-- Contenedor de las 3 cámaras. Se colocan en fila -->
+                <!-- Se declaran las cámaras. Cada una como un div de clase camara -->
+                 <!-- Con draggable = true, el div se hace arrastrable -->
                 <div class = "camara" id = "camara-manzanas" data-fruta = "manzanas" draggable = "true">
                     <!-- se pone draggable false para que se arrastre el div entero y no solo la imagen -->
                     <img src = "../img/camara_manzanas.svg" alt = "" draggable = "false"> 
-                    <p> Cámara 1 <br> Manzanas </p>
+                    <p> Cámara 1 <br> Manzanas </p> <!--Con <br> se hace un salto de línea -->
                 </div>
                 <div class = "camara" id = "camara-fresas" data-fruta = "fresas" draggable = "true">
                     <!-- se pone draggable false para que se arrastre el div entero y no solo la imagen -->

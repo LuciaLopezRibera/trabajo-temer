@@ -1,35 +1,35 @@
 
 /* Estilo de las tres cámaras (iconos que se arrastran) */
 .camaras{
-    display: flex; 
-    flex-wrap: wrap;
+    display: flex; /* poner los iconos de las cámaras en fila */
+    flex-wrap: wrap; /* si no caben al encoger la pantalla se bajan de línea */
     justify-content: center; 
-    gap: 24px;
+    gap: 24px; /* separación entre ellos */
     margin-top: 20px;
     margin-bottom: 30px;
 }
 
 .camara{
-    width: 170px;
+    width: 170px; /* fijar el ancho */
     background-color: white;
     border: 3px solid #6aa87a;
-    border-radius: 16px;
-    padding: 14px; 
+    border-radius: 16px; /* redondear las esquinas */
+    padding: 14px; /* espacio interior */
     text-align: center;
-    cursor: grab;
-    transition: transform 0.3s, background-color 0.3s;
+    cursor: grab; /* para que salga la mano de agarrar */
+    transition: transform 0.3s, background-color 0.3s; 
 }
 
 .camara:hover{
-    transform: scale (1.06);
+    transform: scale(1.06); /* al pasar el ratón por encima crece */
 }
 
-.camara img{
+.camara img{ /* fijar el tamaño de la imagen dentro del icono */
     width: 96px;
     height: 96px;
 }
 
-.camara p{
+.camara p{ /* colocar el texto del icono, ponerlo en negrita y cambiarle el color */
     margin-top: 8px;
     font-weight: bold;
     color: #2e5e46;
@@ -38,11 +38,11 @@
 /* Estilo de la zona de visualización (donde se sueltan las cámaras) */
 .zona{
     height: 520px; /* alto fijo para que la caja no crezca y el vídeo se ajuste a la caja */
-    overflow: hidden;
+    overflow: hidden; /* cortar lo que se sobresalga */
     display: flex;
     flex-direction: column; /* para que los elementos se coloquen uno debajo del otro */
-    align-items: center; 
-    justify-content: center;
+    align-items: center; /* elementos centrados en horizontal */
+    justify-content: center; /* elementos centrados en vertical */
     background-color: #f4faf1;
     border: 4px dashed #6aa87a; /* para que el borde sea discontinuo mientras esté vacía */
     border-radius: 20px; 
@@ -50,7 +50,7 @@
     transition: background-color 0.3s;
 }
 
-.zona > p{
+.zona > p{ /* p's que son hijos directos de zona (texto de zona vacía) */
     color: #5b6b5b;
     font-size: 1.2em;
     margin: 0; 
@@ -59,31 +59,32 @@
 /* Para que ponga "EN DIRECTO" encima del vídeo */
 .directo{
     flex-shrink: 0; /* para que la barra no se encoja */
-    display: flex;
-    align-items: center;
+    display: flex; /* textos en fila */
+    align-items: center; /* textos centrados */
     gap: 12px; 
     margin-bottom: 12px;
     font-weight: bold;
     color: #2e5e46;
 }
 
-.punto{
+.punto{ /* punto de color rojo y un poco más grande */
     color: #d9534f;
     font-size: 1.2em;
 }
 
 .hora{
     color: #5b6b5b;
-    font-weight: normal;
+    font-weight: normal; /* que la hora no salga en negrita */
 }
 
 .zona video{
     flex: 1; /* ocupa el espacio que queda debajo de la barra de directo */
     min-height: 0; /* no hay restricción (si el vídeo es más grande que la caja se encoge) */
-    width: 100%;
+    width: 100%; /* que ocupe todo el ancho disponible */
     max-width: 800px;
-    background-color: #f4faf1; /* aparecen franjas segras si el vídeo no tiene la misma forma que la caja */
+    background-color: #f4faf1; /* aparecen franjas si el vídeo no tiene la misma forma que la caja para que no se note el corte*/
+    /* quitar el borde y redondear las esquinas */
     border: none; 
-    border-radius: 12px; 
+    border-radius: 12px;
 }
 
